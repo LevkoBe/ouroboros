@@ -10,8 +10,16 @@
   color: var(--text-primary);
   border-radius: 4px;
   margin-left: 0.5rem;
+  transition: all 0.3 ease;
 }
 
 .languageSelector:hover {
   background-color: var(--bg-secondary);
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--accent-hover);
+}
+
+.languageSelector:active {
+  transform: scale(0.95);
+  opacity: 0.8;
 }

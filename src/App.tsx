@@ -17,7 +17,7 @@ const App: React.FC = () => {
     // Simulating initial load delay
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 100);
 
     return () => clearTimeout(timer);
   }, []);

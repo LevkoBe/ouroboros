@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./ThemeToggle.module.css";
 import { ThemeContext } from "@/contexts/ThemeContext";
+import { LuSun, LuMoon } from "react-icons/lu";
 
 const ThemeToggle: React.FC = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -13,7 +14,7 @@ const ThemeToggle: React.FC = () => {
       onClick={toggleTheme}
       aria-label={t(`theme.${theme === "light" ? "dark" : "light"}`)}
     >
-      {theme === "light" ? "🌙" : "☀️"}
+      {theme === "light" ? <LuMoon /> : <LuSun />}
     </button>
   );
 };

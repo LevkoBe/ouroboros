@@ -11,8 +11,15 @@
   border-radius: 50%;
   width: 40px;
   height: 40px;
+  transition: all 0.3 ease;
 }
 
 .themeToggle:hover {
   background-color: var(--bg-secondary);
+  text-shadow: 0 0 8px var(--accent-hover);
+  color: var(--accent);
+}
+.themeToggle:active {
+  transform: scale(0.95);
+  opacity: 0.8;
 }

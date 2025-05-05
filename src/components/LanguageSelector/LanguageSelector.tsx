@@ -15,9 +15,9 @@ const LanguageSelector: React.FC = () => {
     <button
       className={styles.languageSelector}
       onClick={toggleLanguage}
-      aria-label={t(`language.${language === "en" ? "uk" : "en"}`)}
+      aria-label={t(`language.${language}`)}
     >
-      {language === "en" ? "UA" : "EN"}
+      {language === "en" ? "EN" : "UA"}
     </button>
   );
 };
