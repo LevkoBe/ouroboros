@@ -1,0 +1,77 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "support": "Support Us",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Welcome to Ouroboros",
+    "subtitle": "A modern, minimalist React SPA",
+    "cta": "Learn More"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Ouroboros is a single-page application demonstrating modern React architecture with TypeScript. Our goal is to create clean, maintainable, and accessible web applications.",
+    "values": {
+      "title": "Our Values",
+      "simplicity": "Simplicity",
+      "accessibility": "Accessibility",
+      "performance": "Performance",
+      "innovation": "Innovation"
+    }
+  },
+  "projects": {
+    "title": "Our Projects",
+    "viewMore": "View Details",
+    "items": [
+      {
+        "title": "Project Alpha",
+        "description": "A revolutionary approach to web design"
+      },
+      {
+        "title": "Project Beta",
+        "description": "Innovative interaction patterns"
+      },
+      {
+        "title": "Project Gamma",
+        "description": "Next-gen performance optimization"
+      }
+    ]
+  },
+  "support": {
+    "title": "Support Our Work",
+    "description": "Help us continue developing amazing open-source projects",
+    "options": {
+      "donate": "Make a Donation",
+      "sponsor": "Become a Sponsor",
+      "contribute": "Contribute Code"
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Message sent successfully!",
+    "error": "There was an error sending your message. Please try again."
+  },
+  "footer": {
+    "copyright": "© 2025 Ouroboros. All rights reserved.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "github": "GitHub"
+    }
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  },
+  "language": {
+    "en": "English",
+    "uk": "Ukrainian"
+  }
+}

@@ -1,0 +1,21 @@
+:root[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #333333;
+  --text-secondary: #6c757d;
+  --text-title: #212529;
+  --accent: #0066cc;
+  --accent-hover: #0056b3;
+  --border: #dee2e6;
+}
+
+:root[data-theme="dark"] {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --text-title: #ffffff;
+  --accent: #4d9bf5;
+  --accent-hover: #63a9f7;
+  --border: #333333;
+}

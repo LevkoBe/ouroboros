@@ -1,0 +1,17 @@
+.languageSelector {
+  background: none;
+  border: 1px solid var(--border);
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+
+.languageSelector:hover {
+  background-color: var(--bg-secondary);
+}
