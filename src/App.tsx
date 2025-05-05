@@ -9,6 +9,7 @@ import Support from "./sections/Support/Support";
 import Contact from "./sections/Contact/Contact";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LangProvider } from "./contexts/LangContext";
+import Gallery from "./sections/Gallery/Gallery";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -38,6 +39,9 @@ const App: React.FC = () => {
           <main>
             <section id="home">
               <Home />
+            </section>
+            <section id="gallery">
+              <Gallery />
             </section>
             <section id="about">
               <About />
