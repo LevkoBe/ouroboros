@@ -24,11 +24,8 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Fix 404
-        run: cp ./dist/index.html ./dist/404.html
-
-      # - name: Deploy to GitHub Pages
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./dist
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
