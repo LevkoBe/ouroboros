@@ -1,0 +1,109 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "support": "Support Us",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Welcome to Ouroboros",
+    "subtitle": "A modern, minimalist React SPA",
+    "cta": "Learn More"
+  },
+  "gallery": {
+    "photo1": {
+      "alt": "Photo 1 alt text"
+    },
+    "photo2": {
+      "alt": "Photo 2 alt text"
+    },
+    "photo3": {
+      "alt": "Photo 3 alt text"
+    },
+    "photo4": {
+      "alt": "Photo 4 alt text"
+    },
+    "photo5": {
+      "alt": "Photo 5 alt text"
+    },
+    "photo6": {
+      "alt": "Photo 6 alt text"
+    },
+    "photo7": {
+      "alt": "Photo 7 alt text"
+    },
+    "photo8": {
+      "alt": "Photo 8 alt text"
+    },
+    "photo9": {
+      "alt": "Photo 9 alt text"
+    },
+    "photo10": {
+      "alt": "Photo 10 alt text"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Ouroboros is a single-page application demonstrating modern React architecture with TypeScript. Our goal is to create clean, maintainable, and accessible web applications.",
+    "values": {
+      "title": "Our Values",
+      "simplicity": "Simplicity",
+      "accessibility": "Accessibility",
+      "performance": "Performance",
+      "innovation": "Innovation"
+    }
+  },
+  "projects": {
+    "title": "Our Projects",
+    "viewMore": "View Details",
+    "items": [
+      {
+        "title": "Project Alpha",
+        "description": "A revolutionary approach to web design"
+      },
+      {
+        "title": "Project Beta",
+        "description": "Innovative interaction patterns"
+      },
+      {
+        "title": "Project Gamma",
+        "description": "Next-gen performance optimization"
+      }
+    ]
+  },
+  "support": {
+    "title": "Support Our Work",
+    "description": "Help us continue developing amazing open-source projects",
+    "options": {
+      "donate": "Make a Donation",
+      "sponsor": "Become a Sponsor",
+      "contribute": "Contribute Code"
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Message sent successfully!",
+    "error": "There was an error sending your message. Please try again."
+  },
+  "footer": {
+    "copyright": "© 2025 Ouroboros. All rights reserved.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "github": "GitHub"
+    }
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  },
+  "language": {
+    "en": "English",
+    "uk": "Ukrainian"
+  }
+}
