@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { LangContext } from "../../contexts/LangContext";
-import styles from "./LanguageSelector.module.css";
 
 const LanguageSelector: React.FC = () => {
   const { language, changeLanguage } = useContext(LangContext);
@@ -13,7 +12,7 @@ const LanguageSelector: React.FC = () => {
 
   return (
     <button
-      className={styles.languageSelector}
+      style={{ fontSize: "0.875rem", padding: "0.25rem 0.5rem" }}
       onClick={toggleLanguage}
       aria-label={t(`language.${language}`)}
     >

@@ -1,4 +1,9 @@
 @import "./themes.css";
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
+
+:root {
+  --header-height: 72px;
+}
 
 * {
   margin: 0;
@@ -16,7 +21,7 @@ body {
 
 body {
   background-color: var(--bg-primary);
-  color: var(--text-primary);
+  color: var(--fg-primary);
 }
 
 .app {
@@ -33,7 +38,7 @@ section {
   padding: 4rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-height));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,12 +50,36 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text-title);
+  color: var(--fg-primary);
   margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Crimson Text", serif;
 }
 
 p {
   margin-bottom: 1rem;
+}
+
+.clickable,
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clickable:hover,
+button:hover {
+  text-shadow: var(--text-shadow);
+}
+
+.clickable:active,
+button:active {
+  transform: scale(0.95);
+  opacity: 0.8;
 }
 
 a {
@@ -60,16 +89,19 @@ a {
 }
 
 a:hover {
-  color: var(--accent-hover);
+  color: var(--accent);
 }
 
 button {
   cursor: pointer;
   padding: 0.5rem 1rem;
-  border: none;
+  border: 1px solid var(--border);
   border-radius: 4px;
   font-weight: 500;
   transition: all 0.3s ease;
+  background-color: var(--accent);
+  color: var(--fg-primary);
+  font-size: 1.05rem;
 }
 
 input,
@@ -80,5 +112,23 @@ textarea {
   border: 1px solid var(--border);
   border-radius: 4px;
   background-color: var(--bg-secondary);
-  color: var(--text-primary);
+  color: var(--fg-primary);
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(var(--accent-rgb), 0.2);
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: transparent;
 }

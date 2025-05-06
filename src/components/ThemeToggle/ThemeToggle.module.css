@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-primary);
+  color: var(--fg-primary);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -16,7 +16,7 @@
 
 .themeToggle:hover {
   background-color: var(--bg-secondary);
-  text-shadow: 0 0 8px var(--accent-hover);
+  text-shadow: var(--text-shadow);
   color: var(--accent);
 }
 .themeToggle:active {

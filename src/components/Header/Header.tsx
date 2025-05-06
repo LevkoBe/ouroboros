@@ -26,18 +26,18 @@ const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div
-          className={`${styles.logo} ${styles.clickable}`}
+          className={`${styles.logo} clickable`}
           onClick={() => handleNavClick("home")}
         >
           <img
-            src={theme === "dark" ? "/logo-white.svg" : "/logo.svg"}
+            src={theme === "dark" ? "./logo-white.svg" : "./logo.svg"}
             alt="Ouroboros Logo"
           />
           <span>Ouroboros</span>
         </div>
 
         <button
-          className={`${styles.mobileMenuButton} ${styles.clickable}`}
+          className={`${styles.mobileMenuButton} clickable`}
           onClick={toggleMobileMenu}
           aria-label={
             mobileMenuOpen
@@ -52,7 +52,7 @@ const Header: React.FC = () => {
           <ul>
             <li>
               <button
-                className={styles.clickable}
+                className="clickable"
                 onClick={() => handleNavClick("home")}
               >
                 {t("header.home")}
@@ -60,7 +60,7 @@ const Header: React.FC = () => {
             </li>
             <li>
               <button
-                className={styles.clickable}
+                className="clickable"
                 onClick={() => handleNavClick("about")}
               >
                 {t("header.about")}
@@ -68,7 +68,7 @@ const Header: React.FC = () => {
             </li>
             <li>
               <button
-                className={styles.clickable}
+                className="clickable"
                 onClick={() => handleNavClick("projects")}
               >
                 {t("header.projects")}
@@ -76,7 +76,7 @@ const Header: React.FC = () => {
             </li>
             <li>
               <button
-                className={styles.clickable}
+                className="clickable"
                 onClick={() => handleNavClick("support")}
               >
                 {t("header.support")}
@@ -84,7 +84,7 @@ const Header: React.FC = () => {
             </li>
             <li>
               <button
-                className={styles.clickable}
+                className="clickable"
                 onClick={() => handleNavClick("contact")}
               >
                 {t("header.contact")}

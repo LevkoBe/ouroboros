@@ -60,5 +60,5 @@
 }
 
 .optionButton:hover {
-  background-color: var(--accent-hover);
+  background-color: var(--accent);
 }

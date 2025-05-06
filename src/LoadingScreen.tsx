@@ -7,7 +7,7 @@ const LoadingScreen: React.FC = () => {
     <div className="loading-screen">
       <div className="logo-container">
         <img
-          src={theme === "dark" ? "/logo-white.svg" : "/logo.svg"}
+          src={theme === "dark" ? "./logo-white.svg" : "./logo.svg"}
           alt="Ouroboros Logo"
           className="spinning-logo"
         />

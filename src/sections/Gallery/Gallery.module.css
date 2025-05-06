@@ -43,10 +43,11 @@
 .arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   z-index: 10;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--bg-primary);
+  color: none;
   border: none;
+  opacity: 0.5;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -59,7 +60,7 @@
 }
 
 .arrow:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--bg-secondary);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 

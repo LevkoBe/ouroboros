@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.logo}>
-            <img src="/logo.svg" alt="Ouroboros Logo" />
+            <img src="./logo.svg" alt="Ouroboros Logo" />
             <span>Ouroboros</span>
           </div>
 

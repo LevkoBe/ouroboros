@@ -49,7 +49,7 @@
 
 .projectContent p {
   margin-bottom: 1.5rem;
-  color: var(--text-secondary);
+  color: var(--fg-primary);
 }
 
 .projectButton {

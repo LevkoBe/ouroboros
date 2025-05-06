@@ -30,7 +30,7 @@
 .logo span {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text-title);
+  color: var(--fg-primary);
 }
 
 .links {
@@ -40,7 +40,7 @@
 
 .copyright {
   text-align: center;
-  color: var(--text-secondary);
+  color: var(--fg-primary);
   font-size: 0.9rem;
 }
 
