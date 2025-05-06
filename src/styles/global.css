@@ -74,6 +74,7 @@ button {
 .clickable:hover,
 button:hover {
   text-shadow: var(--text-shadow);
+  background-color: var(--fg-secondary);
 }
 
 .clickable:active,
@@ -99,8 +100,8 @@ button {
   border-radius: 4px;
   font-weight: 500;
   transition: all 0.3s ease;
-  background-color: var(--accent);
-  color: var(--fg-primary);
+  background-color: var(--fg-primary);
+  color: var(--bg-primary);
   font-size: 1.05rem;
 }
 

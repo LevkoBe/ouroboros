@@ -1,34 +1,66 @@
-import React from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./About.module.css";
 
-const About: React.FC = () => {
+const About = () => {
   const { t } = useTranslation();
+  const [showExtended, setShowExtended] = useState(false);
 
-  const values = [
-    { key: "simplicity", icon: "✨" },
-    { key: "accessibility", icon: "🌐" },
-    { key: "performance", icon: "🚀" },
-    { key: "innovation", icon: "💡" },
-  ];
+  const toggleExtendedText = () => {
+    setShowExtended(!showExtended);
+  };
 
   return (
-    <div className={styles.about}>
-      <h2 className={styles.title}>{t("about.title")}</h2>
-      <p className={styles.description}>{t("about.description")}</p>
+    <section className={styles.aboutSection}>
+      <h2 className={styles.heading}>{t("about.title", "About us")}</h2>
 
-      <div className={styles.valuesSection}>
-        <h3>{t("about.values.title")}</h3>
-        <div className={styles.valuesGrid}>
-          {values.map((value) => (
-            <div key={value.key} className={styles.valueCard}>
-              <span className={styles.valueIcon}>{value.icon}</span>
-              <h4>{t(`about.values.${value.key}`)}</h4>
+      <div className={styles.contentContainer}>
+        <div className={styles.imageContainer}>
+          <img
+            src={t("about.image.src")}
+            alt={t("about.image.altKey")}
+            className={styles.image}
+          />
+        </div>
+
+        <div
+          style={{ flex: showExtended ? 5 : 3 }}
+          className={styles.textContainer}
+        >
+          <div className={styles.textContent}>
+            <div
+              className={`${styles.mainText} ${
+                showExtended ? styles.hidden : styles.visible
+              }`}
+            >
+              {t("about.mainText")}
             </div>
-          ))}
+
+            <div
+              className={`${styles.extendedText} ${
+                showExtended ? styles.visible : styles.hidden
+              }`}
+            >
+              <p>{t("about.extendedText.part1")}</p>
+              <p>{t("about.extendedText.part2")}</p>
+              <p>{t("about.extendedText.part3")}</p>
+              <p>{t("about.extendedText.part4")}</p>
+              <p>{t("about.extendedText.part5")}</p>
+              <p>{t("about.extendedText.part6")}</p>
+            </div>
+          </div>
+
+          <button
+            onClick={toggleExtendedText}
+            className={styles.learnMoreButton}
+          >
+            {showExtended
+              ? t("about.button.less", "Show less")
+              : t("about.button.more", "Learn more")}
+          </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

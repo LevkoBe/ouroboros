@@ -1,58 +1,103 @@
-.about {
-  padding: 2rem 0;
+.aboutSection {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--bg-primary);
 }
 
-.title {
+.heading {
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
+  font-weight: 700;
+  color: var(--fg-primary);
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
-.description {
+.contentContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.imageContainer {
+  flex: 2;
+  max-width: 45%;
+  position: sticky;
+  top: calc((var(--header-height) + 2rem));
+  align-self: flex-start;
+  height: fit-content;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.textContainer {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  transition: all 1s ease;
+}
+
+.textContent {
+  position: relative;
+  overflow: hidden;
+}
+
+.mainText,
+.extendedText {
+  transition: all 1s ease;
+  overflow: hidden;
+}
+
+.mainText {
   font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 3rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  color: var(--fg-secondary);
+  margin-bottom: 1.5rem;
 }
 
-.valuesSection {
-  margin-top: 3rem;
+.extendedText {
+  margin-bottom: 1.5rem;
 }
 
-.valuesSection h3 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.75rem;
-}
-
-.valuesGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  justify-content: center;
-}
-
-.valueCard {
-  background-color: var(--bg-secondary);
-  border-radius: 8px;
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.valueCard:hover {
-  transform: translateY(-5px);
-}
-
-.valueIcon {
-  font-size: 2rem;
+.extendedText p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--fg-secondary);
   margin-bottom: 1rem;
-  display: block;
 }
 
-.valueCard h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+.visible {
+  max-height: 2000px;
+  padding: 1rem 0;
+}
+
+.hidden {
+  max-height: 0;
+  padding: 0;
+}
+
+.learnMoreButton {
+  align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+  .contentContainer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .imageContainer {
+    max-width: 100%;
+    position: initial;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
 }

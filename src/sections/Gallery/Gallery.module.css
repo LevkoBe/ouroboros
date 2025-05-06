@@ -44,7 +44,6 @@
   position: absolute;
   top: 50%;
   z-index: 10;
-  background: var(--bg-primary);
   color: none;
   border: none;
   opacity: 0.5;
