@@ -7,8 +7,9 @@
     "contact": "Contact"
   },
   "home": {
-    "title": "Welcome to Ouroboros",
-    "subtitle": "A modern, minimalist React SPA",
+    "title": "Ouroboros",
+    "subtitle": " Charitable foundation",
+    "description": "From the south of Ukraine, we’re showing up for each other — using art, mutual aid, and collective care to resist the violence of war and build solidarity from the ground up.",
     "cta": "Learn More"
   },
   "gallery": {
