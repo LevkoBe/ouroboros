@@ -35,7 +35,8 @@ main {
 }
 
 section {
-  padding: 4rem 1rem;
+  padding: 1rem;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   min-height: calc(100vh - var(--header-height));
@@ -54,10 +55,19 @@ h6 {
   margin-bottom: 1rem;
 }
 
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
 h1,
-h2,
-h3,
-h4 {
+h2 {
   font-family: "Crimson Text", serif;
 }
 
@@ -103,6 +113,7 @@ button {
   background-color: var(--fg-primary);
   color: var(--bg-primary);
   font-size: 1.05rem;
+  width: fit-content;
 }
 
 input,

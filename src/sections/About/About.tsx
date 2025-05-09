@@ -12,7 +12,7 @@ const About = () => {
 
   return (
     <section className={styles.aboutSection}>
-      <h2 className={styles.heading}>{t("about.title", "About us")}</h2>
+      <h1>{t("about.title", "About us")}</h1>
 
       <div className={styles.contentContainer}>
         <div className={styles.imageContainer}>
@@ -54,9 +54,7 @@ const About = () => {
             onClick={toggleExtendedText}
             className={styles.learnMoreButton}
           >
-            {showExtended
-              ? t("about.button.less", "Show less")
-              : t("about.button.more", "Learn more")}
+            {showExtended ? t("common.button.less") : t("common.button.more")}
           </button>
         </div>
       </div>

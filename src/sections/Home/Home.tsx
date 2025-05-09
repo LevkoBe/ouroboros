@@ -23,7 +23,7 @@ const Home: React.FC = () => {
         />
       </div>
       <div className={styles.content}>
-        <h1 className={styles.title}>{t("home.title")}</h1>
+        <h1>{t("home.title")}</h1>
         <p className={styles.subtitle}>{t("home.subtitle")}</p>
         <p className={styles.description}>{t("home.description")}</p>
         <button className={styles.ctaButton} onClick={handleCTAClick}>
