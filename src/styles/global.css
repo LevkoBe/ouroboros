@@ -84,7 +84,7 @@ button {
 .clickable:hover,
 button:hover {
   text-shadow: var(--text-shadow);
-  background-color: var(--fg-secondary);
+  filter: opacity(0.7);
 }
 
 .clickable:active,
