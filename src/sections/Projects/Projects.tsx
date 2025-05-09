@@ -62,7 +62,7 @@ const Projects: React.FC = () => {
         left: rect.left,
         width: rect.width,
         zIndex: 999,
-        transition: "all 0.3s ease",
+        transition: "all 0.5s ease",
       };
 
       setExpandedStyle(initial);
