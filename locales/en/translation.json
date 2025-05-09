@@ -1,4 +1,10 @@
 {
+  "common": {
+    "button": {
+      "less": "Show less",
+      "more": "Show more"
+    }
+  },
   "header": {
     "home": "Home",
     "about": "About",
@@ -46,10 +52,6 @@
   },
   "about": {
     "title": "About Us",
-    "button": {
-      "less": "Show less",
-      "more": "Show more"
-    },
     "image": {
       "src": "./images/about.png",
       "altKey": "Oro and Lyn"
@@ -73,21 +75,21 @@
   },
   "projects": {
     "title": "Our Projects",
-    "viewMore": "View Details",
-    "items": [
-      {
-        "title": "Project Alpha",
-        "description": "A revolutionary approach to web design"
-      },
-      {
-        "title": "Project Beta",
-        "description": "Innovative interaction patterns"
-      },
-      {
-        "title": "Project Gamma",
-        "description": "Next-gen performance optimization"
-      }
-    ]
+    "project1": {
+      "imageSrc": "./images/project1.png",
+      "title": "Humanitarian Aid for Frontline Communities",
+      "description": "We operate in the south of Ukraine, focusing on frontline, heavily affected regions. Our team delivers essential supplies such as food, water, hygiene products, and medical aid to vulnerable residents. We work closely with local volunteers to respond quickly and adapt to urgent needs."
+    },
+    "project2": {
+      "imageSrc": "./images/project2.png",
+      "title": "Support for Street Animals and Local Shelters",
+      "description": "Even in the most dangerous areas, the street animal population — especially dogs and cats — continues to grow. We provide food, medical care, and emergency shelter support for animals in crisis. By partnering with local shelters and caring individuals, we help save lives and reduce suffering."
+    },
+    "project3": {
+      "imageSrc": "./images/project3.png",
+      "title": "Support and Creation of Local Social & Creative Centers",
+      "description": "We believe that healing and resilience grow from community spaces where people can gather, create, and connect. These centers offer workshops, therapy programs, and cultural activities for children and adults alike. They serve as safe havens that foster hope and strengthen social bonds."
+    }
   },
   "support": {
     "title": "Support Our Work",
