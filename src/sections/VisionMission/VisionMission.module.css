@@ -1,0 +1,104 @@
+.contentContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.textContainer {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.sectionContainer {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.sectionContainer:last-child {
+  border-bottom: none;
+}
+
+.imageContainer {
+  flex: 2;
+  max-width: 45%;
+  position: sticky;
+  top: calc((var(--header-height) + 2rem));
+  align-self: flex-start;
+  height: fit-content;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mainText,
+.extendedText {
+  transition: all 0.8s ease;
+  overflow: hidden;
+}
+
+.clipped {
+  line-clamp: 2;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.clipped,
+.expanded {
+  transition: all 0.3s ease;
+  max-height: fit-content;
+}
+
+.projectTitle {
+  margin-top: 1rem;
+}
+
+.extendedText {
+  margin-bottom: 1rem;
+}
+
+.extendedText p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--fg-secondary);
+  margin-bottom: 1rem;
+}
+
+.visible {
+  max-height: 1000px;
+}
+
+.hidden {
+  max-height: 0;
+}
+
+.learnMoreButton {
+  color: var(--fg-primary);
+  border: 2px solid var(--border);
+  background-color: var(--bg-primary);
+}
+.learnMoreButton:hover {
+  color: var(--fg-secondary);
+}
+
+@media (max-width: 768px) {
+  .contentContainer {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
+  .imageContainer {
+    max-width: 100%;
+    position: initial;
+  }
+
+  .textContainer {
+    gap: 2rem;
+  }
+}

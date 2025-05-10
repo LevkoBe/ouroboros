@@ -10,6 +10,7 @@ import Contact from "./sections/Contact/Contact";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LangProvider } from "./contexts/LangContext";
 import Gallery from "./sections/Gallery/Gallery";
+import VisionMission from "./sections/VisionMission/VisionMission";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,6 +49,9 @@ const App: React.FC = () => {
             </section>
             <section id="projects">
               <Projects />
+            </section>
+            <section id="vision-mission">
+              <VisionMission />
             </section>
             <section id="support">
               <Support />

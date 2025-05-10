@@ -91,6 +91,34 @@
       "description": "We believe that healing and resilience grow from community spaces where people can gather, create, and connect. These centers offer workshops, therapy programs, and cultural activities for children and adults alike. They serve as safe havens that foster hope and strengthen social bonds."
     }
   },
+  "visionMission": {
+    "title": "Vision, Mission & Future",
+    "image": {
+      "src": "./images/visionMission.png",
+      "altKey": "Oro petting the dog"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "mainText": "We envision a Ukraine where healing, dignity, and solidarity guide recovery from war.",
+      "extendedText": "We envision a Ukraine where healing, dignity, and solidarity guide recovery from war. Through community-rooted care, creative expression, and support for displaced people, the Ouroboros Charitable Foundation works toward a future where all survivors of conflict have access to safety, belonging, and the resources they need to rebuild their lives."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "mainText": "To create inclusive spaces for healing, empowerment, and regeneration through art, community, and care.",
+      "extendedText": "To create inclusive spaces for healing, empowerment, and regeneration through art, community, and care. We support war-affected individuals—especially displaced people, youth, and veterans—by fostering creativity, rebuilding communities, and promoting long-term well-being."
+    },
+    "futureProjects": {
+      "title": "Future Projects",
+      "project1": {
+        "title": "Creative & Healing Center",
+        "description": "A safe space for creativity, connection, and recovery. This center will offer art therapy, workshops, and events for youth, displaced people, and war survivors—helping them heal, grow, and rebuild their lives through shared creativity and support."
+      },
+      "project2": {
+        "title": "Eco-Settlement for Displaced Families",
+        "description": "A long-term housing and community project for families displaced by war. By restoring abandoned villages and creating eco-friendly, self-sustaining communities, we aim to provide safety, purpose, and a fresh start in unity with nature."
+      }
+    }
+  },
   "support": {
     "title": "Support Our Work",
     "description": "Help us continue developing amazing open-source projects",
