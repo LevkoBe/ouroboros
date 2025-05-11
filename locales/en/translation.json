@@ -120,12 +120,48 @@
     }
   },
   "support": {
-    "title": "Support Our Work",
-    "description": "Help us continue developing amazing open-source projects",
+    "title": "Support Our Mission",
+    "cta": "Join us in building safe, healing spaces for those affected by war. Whether through a donation, partnership, or volunteering your time, your contribution truly matters.",
+    "gratitude": "Thank you for standing with us.",
     "options": {
-      "donate": "Make a Donation",
-      "sponsor": "Become a Sponsor",
-      "contribute": "Contribute Code"
+      "donate": {
+        "title": "Donate",
+        "data": "eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXlkb25hdGUiLCJhbW91bnQiOiIxMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoiQ2hhcml0eSBkb25hdGlvbiIsInB1YmxpY19rZXkiOiJzYW5kYm94X2kyNTEzODE4NTAxOSIsImxhbmd1YWdlIjoiZW4ifQ==",
+        "signature": "cEYdldOZGtAmTDPNDKS8YsnPjec="
+      },
+      "volunteer": {
+        "title": "Volunteer",
+        "description": "Contribute your time and talents to help us create safe spaces for healing. Every skill, every hour helps change lives.",
+        "name": "Name",
+        "email": "Email",
+        "skills": "Skills",
+        "submit": "Submit"
+      },
+      "partner": {
+        "title": "Partner",
+        "description": "Collaborate with us to expand the impact of our mission. Together, we can create safe, healing spaces for those in need.",
+        "organization": "Organization",
+        "email": "Email",
+        "proposalType": {
+          "type": "Proposal Type",
+          "selectType": "Select Proposal Type",
+          "sponsorship": "Sponsorship",
+          "collaboration": "Collaboration",
+          "other": "Other"
+        },
+        "message": {
+          "title": "Message",
+          "sponsorship": "We’re interested in sponsoring your upcoming initiatives. Let’s discuss how we can contribute.",
+          "collaboration": "We’d love to collaborate on your next project. We believe our missions align closely.",
+          "other": "We have an idea for how we could work together that doesn’t quite fit the other categories."
+        },
+        "submit": "Submit"
+      },
+      "share": {
+        "title": "Spread the Word",
+        "description": "Help us reach more people—share this page with your network.",
+        "copy": "Copy Link"
+      }
     }
   },
   "contact": {
