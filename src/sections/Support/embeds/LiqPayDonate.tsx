@@ -10,6 +10,7 @@ const LiqPayDonate: React.FC<LiqPayDonateProps> = ({ data, signature }) => {
     const script = document.createElement("script");
     script.src = "https://static.liqpay.ua/libjs/checkout.js";
     script.async = true;
+    script.defer = true;
 
     script.onload = () => {
       // @ts-expect-error: LiqPayCheckoutCallback is not defined on the window object by TypeScript
