@@ -1,0 +1,184 @@
+.embed {
+  width: 100%;
+}
+
+.embed h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--fg-primary);
+}
+
+.embed p {
+  margin-bottom: 1.5rem;
+  color: var(--fg-secondary);
+  line-height: 1.5;
+}
+
+.donationForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.amountOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.amountButton {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--bg-tertiary);
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.amountButton:hover {
+  background-color: var(--accent-color-light);
+  border-color: var(--accent-color);
+}
+
+.customAmount {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  min-width: 120px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroupInline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.formGroup label,
+.formGroupInline label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--fg-primary);
+}
+
+.formGroupInline label {
+  flex: 0 0 100px;
+  text-align: right;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select,
+.formGroupInline input,
+.formGroupInline textarea,
+.formGroupInline select {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-primary);
+  color: var(--fg-primary);
+  font-size: 1rem;
+}
+
+.formGroupInline input,
+.formGroupInline select {
+  flex: 1;
+}
+
+.shareLinksContainer,
+.shareButton {
+  display: none;
+}
+
+.copyLinkInput,
+.copyButton,
+.copyLinkContainer {
+  display: none;
+}
+
+.socialButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background-color: var(--bg-tertiary);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--fg-primary);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-color);
+}
+
+.socialButton:hover {
+  background-color: var(--accent-color-light);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.socialIcon {
+  font-size: 1.2rem;
+}
+
+.copyLinkWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.linkInput {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  background-color: var(--bg-primary);
+  color: var(--fg-primary);
+  font-size: 0.9rem;
+}
+
+.copyBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.copyBtn:hover {
+  background-color: var(--accent-color-dark);
+}
+
+.copyIcon {
+  font-size: 1.1rem;
+}
+
+.copyButton:hover {
+  background-color: var(--accent-color-dark);
+}
