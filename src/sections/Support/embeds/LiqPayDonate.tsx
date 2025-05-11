@@ -8,7 +8,7 @@ type LiqPayDonateProps = {
 const LiqPayDonate: React.FC<LiqPayDonateProps> = ({ data, signature }) => {
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "//static.liqpay.ua/libjs/checkout.js";
+    script.src = "https://static.liqpay.ua/libjs/checkout.js";
     script.async = true;
 
     script.onload = () => {

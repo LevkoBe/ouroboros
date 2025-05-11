@@ -126,8 +126,8 @@
     "options": {
       "donate": {
         "title": "Задонатити",
-        "data": "eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXlkb25hdGUiLCJhbW91bnQiOiIxMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoiQ2hhcml0eSBkb25hdGlvbiIsInB1YmxpY19rZXkiOiJzYW5kYm94X2kyNTEzODE4NTAxOSIsImxhbmd1YWdlIjoiZW4ifQ==",
-        "signature": "cEYdldOZGtAmTDPNDKS8YsnPjec="
+        "data": "eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXlkb25hdGUiLCJhbW91bnQiOiIxMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0JHQu9Cw0LPQvtC00ZbQudC90LjQuSDQstC90LXRgdC+0LoiLCJwdWJsaWNfa2V5Ijoic2FuZGJveF9pMjUxMzgxODUwMTkiLCJsYW5ndWFnZSI6InVrIn0=",
+        "signature": "nMa+0GO40nKWPba8FbVf/Ow0V28="
       },
       "volunteer": {
         "title": "Стати волонтером",
