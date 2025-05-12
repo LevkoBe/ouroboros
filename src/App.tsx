@@ -11,6 +11,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { LangProvider } from "./contexts/LangContext";
 import Gallery from "./sections/Gallery/Gallery";
 import VisionMission from "./sections/VisionMission/VisionMission";
+import Partners from "./sections/Partners/Partners";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -55,6 +56,9 @@ const App: React.FC = () => {
             </section>
             <section id="support">
               <Support />
+            </section>
+            <section id="partners">
+              <Partners />
             </section>
             <section id="contact">
               <Contact />
