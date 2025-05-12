@@ -164,6 +164,33 @@
       }
     }
   },
+  "partners": {
+    "title": "Our Partners",
+    "partner1": {
+      "description": "Razom for Ukraine has been a vital supporter of our frontline aid missions, helping us deliver life-saving supplies and strengthen grassroots networks in war-affected areas.",
+      "name": "Razom for Ukraine",
+      "title": "Humanitarian NGO",
+      "imageSrc": "./images/placeholder-avatar.jpg"
+    },
+    "partner2": {
+      "description": "With their deep community roots and shared love for animals, Shelter Paws has helped us rescue, feed, and protect countless street animals caught in the chaos of war.",
+      "name": "Shelter Paws",
+      "title": "Animal Rescue Initiative",
+      "imageSrc": "./images/placeholder-avatar.jpg"
+    },
+    "partner3": {
+      "description": "Art for Resistance collaborates with us to host creative therapy workshops and exhibitions that uplift voices of resilience and inspire communal healing through art.",
+      "name": "Art for Resistance",
+      "title": "Art Therapy Collective",
+      "imageSrc": "./images/placeholder-avatar.jpg"
+    },
+    "partner4": {
+      "description": "The Grassroots Solidarity Fund has helped sustain our mutual aid programs through flexible microgrants and strategic advice — proof that small, committed groups can create big ripples.",
+      "name": "Grassroots Solidarity Fund",
+      "title": "Microgrant Foundation",
+      "imageSrc": "./images/placeholder-avatar.jpg"
+    }
+  },
   "contact": {
     "title": "Get in Touch",
     "name": "Name",

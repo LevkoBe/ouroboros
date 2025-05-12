@@ -164,6 +164,33 @@
       }
     }
   },
+  "partners": {
+    "title": "Наші партнери",
+    "partner1": {
+      "description": "Razom for Ukraine є важливим партнером у наших гуманітарних місіях на передовій, допомагаючи доставляти життєво необхідні речі та зміцнювати мережі взаємодопомоги в постраждалих регіонах.",
+      "name": "Razom for Ukraine",
+      "title": "Громадська гуманітарна організація",
+      "photoSrc": "./images/partners/partner1.jpg"
+    },
+    "partner2": {
+      "description": "Завдяки глибокому зв’язку з місцевими громадами Shelter Paws допомагає нам рятувати, годувати та захищати безпритульних тварин, які постраждали від війни.",
+      "name": "Shelter Paws",
+      "title": "Ініціатива порятунку тварин",
+      "photoSrc": "./images/partners/partner2.jpg"
+    },
+    "partner3": {
+      "description": "Art for Resistance співпрацює з нами для проведення арт-терапевтичних майстерень і виставок, які підсилюють голоси стійкості та надихають на зцілення через творчість.",
+      "name": "Art for Resistance",
+      "title": "Колектив арт-терапії",
+      "photoSrc": "./images/partners/partner3.jpg"
+    },
+    "partner4": {
+      "description": "Grassroots Solidarity Fund підтримує наші програми взаємодопомоги мікрогрантами та стратегічними порадами — яскравий приклад того, як невеликі, але віддані команди можуть створювати великі зміни.",
+      "name": "Grassroots Solidarity Fund",
+      "title": "Фонд мікрогрантів",
+      "photoSrc": "./images/partners/partner4.jpg"
+    }
+  },
   "contact": {
     "title": "Зв'яжіться з нами",
     "name": "Ім'я",
