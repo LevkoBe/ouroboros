@@ -193,12 +193,11 @@
   },
   "contact": {
     "title": "Get in Touch",
-    "name": "Name",
+    "description": "Whether you have questions, ideas, or simply want to connect—we’d love to hear from you. Reach out and let’s explore how we can build healing, creative spaces together.",
     "email": "Email",
     "message": "Message",
-    "send": "Send Message",
-    "success": "Message sent successfully!",
-    "error": "There was an error sending your message. Please try again."
+    "emailCopied": "Email copied to clipboard!",
+    "nicknameCopied": "Nickname copied to clipboard!"
   },
   "footer": {
     "copyright": "© 2025 Ouroboros. All rights reserved.",

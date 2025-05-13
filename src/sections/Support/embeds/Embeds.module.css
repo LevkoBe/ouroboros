@@ -48,12 +48,6 @@
   min-width: 120px;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
 .formGroup {
   display: flex;
   flex-direction: column;
