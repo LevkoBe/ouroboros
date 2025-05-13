@@ -35,7 +35,28 @@
 
 .links {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.5rem;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--fg-primary);
+  transition: color 0.2s ease;
+}
+
+.socialIcon:hover {
+  color: var(--accent-primary);
 }
 
 .copyright {
@@ -52,5 +73,12 @@
 
   .links {
     margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .socialLinks {
+    width: 100%;
+    justify-content: center;
   }
 }
