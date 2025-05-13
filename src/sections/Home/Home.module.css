@@ -5,6 +5,7 @@
   padding: 2rem;
   gap: 3rem;
   flex-wrap: wrap;
+  min-height: calc(100vh - var(--header-height));
 }
 
 .logoContainer {

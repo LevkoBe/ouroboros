@@ -144,7 +144,7 @@
         "email": "Email",
         "proposalType": {
           "type": "Proposal Type",
-          "selectType": "Select Proposal Type",
+          "selectType": "Select Type",
           "sponsorship": "Sponsorship",
           "collaboration": "Collaboration",
           "other": "Other"

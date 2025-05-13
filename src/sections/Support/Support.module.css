@@ -83,6 +83,7 @@
 .embedContainer {
   flex: 1 1 400px;
   position: sticky;
+  width: 100%;
   top: calc(var(--header-height) + 2rem);
   height: fit-content;
   background-color: var(--bg-secondary);
@@ -106,5 +107,10 @@
 
   .optionsContainer {
     max-width: 100%;
+    position: initial;
+  }
+
+  .embedContainer {
+    position: initial;
   }
 }
