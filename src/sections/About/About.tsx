@@ -46,7 +46,6 @@ const About = () => {
               <p>{t("about.extendedText.part3")}</p>
               <p>{t("about.extendedText.part4")}</p>
               <p>{t("about.extendedText.part5")}</p>
-              <p>{t("about.extendedText.part6")}</p>
             </div>
           </div>
 
