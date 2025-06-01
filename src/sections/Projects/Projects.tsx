@@ -155,7 +155,11 @@ const Projects: React.FC = () => {
                 {isExpanded ? (
                   <div className={styles.descriptionContainer}>
                     <h2>{project.title}</h2>
-                    <p>{project.description}</p>
+                    {project.description.split("\n").map((line, index) => (
+                      <div key={index} style={{ marginBottom: "0.5rem" }}>
+                        {line}
+                      </div>
+                    ))}
                     <button className={styles.closeButton}>✕</button>
                   </div>
                 ) : (
