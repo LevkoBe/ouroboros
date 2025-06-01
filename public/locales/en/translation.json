@@ -15,7 +15,7 @@
   "home": {
     "title": "Ouroboros",
     "subtitle": " Charitable foundation",
-    "description": "From the south of Ukraine, we’re showing up for each other — using art, mutual aid, and collective care to resist the violence of war and build solidarity from the ground up.",
+    "description": "From the south of Ukraine, we are standing up for one another — using art, mutual aid, and collective care to resist the violence of war and build solidarity from the ground up.",
     "cta": "Learn More"
   },
   "gallery": {
@@ -77,17 +77,17 @@
     "project1": {
       "imageSrc": "./images/project1.png",
       "title": "Humanitarian Aid for Frontline Communities",
-      "description": "We operate in the south of Ukraine, focusing on the frontline communities and other affected regions. Our team delivers essential supplies such as food, water, hygiene products, and medical aid to vulnerable residents. We work closely with local volunteers to respond quickly and adapt to urgent needs."
+      "description": "We work in the south of Ukraine, focusing on frontline and war-affected areas of the Mykolaiv and Kherson regions. Our team delivers essential supplies—food, hygiene items, and medical aid—to vulnerable residents, often under daily shelling. Together with local volunteers, we respond quickly to urgent needs on the ground.\nThanks to strong partnerships with international donors, we receive and distribute humanitarian aid directly where it’s needed most. Our trusted network, built on transparency and local knowledge, allows us to coordinate efficiently across both regions. In our first six months, we reached over 5,000 people—and we continue regular missions to Kherson, where aid remains critically needed."
     },
     "project2": {
       "imageSrc": "./images/project2.png",
       "title": "Support for Street Animals and Local Shelters",
-      "description": "Even in the most dangerous areas, the street animal population — especially dogs and cats — continues to grow. We provide food, medical care, and emergency shelter support for animals in crisis. By partnering with local shelters and caring individuals, we help save lives and reduce suffering."
+      "description": "Conflict doesn’t only affect people—it leaves behind thousands of abandoned animals, too. In frontline areas, especially parts of Kherson and Mykolaiv, the street animal population continues to grow, with many cats and dogs left behind by displaced or deceased owners. Without sterilization or regular care, the situation worsens daily.\nWe work with local animal welfare volunteers who courageously care for these animals despite the risks and scarce resources. Through our partnerships and donations, we regularly deliver food and basic supplies to help sustain their efforts. We also support two animal shelters—one in the Mykolaiv region and one in Kherson—providing ongoing assistance to keep their operations running safely and humanely."
     },
     "project3": {
       "imageSrc": "./images/project3.png",
       "title": "Support and Creation of Local Social & Creative Centers",
-      "description": "We believe that healing and resilience grow from community spaces where people can gather, create, and connect. These centers offer workshops, therapy programs, and cultural activities for children and adults alike. They serve as safe havens that foster hope and strengthen social bonds."
+      "description": "Healing from war takes more than humanitarian aid—it takes community, creativity, and care. That’s why we support the development and operation of local social and creative centers in frontline towns and villages. With help from our international partners and donors, we provide financial and material support to equip these spaces with everything they need—from basic furnishings to art materials and educational supplies.\nThese centers offer safe spaces for people to gather, decompress, and reconnect. We organize regular events, workshops, and art-based activities aimed at improving mental well-being, supporting emotional recovery, and encouraging social reintegration—especially for children and families living under the constant weight of war.\nBy working closely with local organizers and residents, we ensure these centers reflect the needs of the communities they serve, while creating lasting infrastructure for care and resilience."
     }
   },
   "visionMission": {
@@ -166,28 +166,18 @@
   "partners": {
     "title": "Our Partners",
     "partner1": {
-      "description": "Razom for Ukraine has been a vital supporter of our frontline aid missions, helping us deliver life-saving supplies and strengthen grassroots networks in war-affected areas.",
-      "name": "Razom for Ukraine",
-      "title": "Humanitarian NGO",
-      "imageSrc": "./images/placeholder-avatar.jpg"
+      "description": "Medicines for Ukraine supports both civilian and military hospitals by providing essential medications and medical supplies. Collaborating directly with the Ministry of Health of Ukraine and other trusted partners, the organization also delivers humanitarian aid to civilians. It has been actively operating since the onset of the full-scale invasion.",
+      "name": "Medicines for Ukraine",
+      "title": "Medical Aid & Humanitarian Relief Organization",
+      "imageSrc": "./images/Medicines for Ukraine.jpg",
+      "website": "https://medicinestoukraine.com/"
     },
     "partner2": {
-      "description": "With their deep community roots and shared love for animals, Shelter Paws has helped us rescue, feed, and protect countless street animals caught in the chaos of war.",
-      "name": "Shelter Paws",
-      "title": "Animal Rescue Initiative",
-      "imageSrc": "./images/placeholder-avatar.jpg"
-    },
-    "partner3": {
-      "description": "Art for Resistance collaborates with us to host creative therapy workshops and exhibitions that uplift voices of resilience and inspire communal healing through art.",
-      "name": "Art for Resistance",
-      "title": "Art Therapy Collective",
-      "imageSrc": "./images/placeholder-avatar.jpg"
-    },
-    "partner4": {
-      "description": "The Grassroots Solidarity Fund has helped sustain our mutual aid programs through flexible microgrants and strategic advice — proof that small, committed groups can create big ripples.",
-      "name": "Grassroots Solidarity Fund",
-      "title": "Microgrant Foundation",
-      "imageSrc": "./images/placeholder-avatar.jpg"
+      "description": "AspenAid is a proven agile NGO providing material resources and humanitarian support to Ukraine in its resistance and response to the unprovoked russian invasion.",
+      "name": "Aspen Aid",
+      "title": "NGO Providing Humanitarian Support for Ukraine",
+      "imageSrc": "./images/Aspen Aid.jpg",
+      "website": "https://www.aspenaid.org/"
     }
   },
   "contact": {
