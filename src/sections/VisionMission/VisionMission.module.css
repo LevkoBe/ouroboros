@@ -90,6 +90,10 @@
   color: var(--fg-secondary);
 }
 
+.li::before {
+  content: "-> ";
+}
+
 @media (max-width: 768px) {
   .contentContainer {
     flex-direction: column-reverse;

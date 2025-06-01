@@ -11,7 +11,11 @@ const renderRichText = (text: string) => {
       const items = block
         .split("\n")
         .filter((line) => line.startsWith("-"))
-        .map((item, idx) => <li key={idx}>{item.slice(1).trim()}</li>);
+        .map((item, idx) => (
+          <li className={styles.li} key={idx}>
+            {item.slice(1).trim()}
+          </li>
+        ));
       return (
         <ul key={index} style={{ marginBottom: "5px" }}>
           {items}
@@ -212,7 +216,7 @@ const VisionMission = () => {
                 <h3 className={styles.projectTitle}>{project.title}</h3>
                 <ExpandableContent
                   isExpanded={expandedSections[project.id]}
-                  clampLines={2} // Show 2 complete lines when collapsed
+                  clampLines={3}
                 >
                   <div className={styles.projectDescription}>
                     {renderRichText(project.description)}
