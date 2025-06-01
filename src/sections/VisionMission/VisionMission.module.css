@@ -37,22 +37,25 @@
 
 .mainText,
 .extendedText {
-  transition: all 0.8s ease;
+  transition: all 1s ease;
   overflow: hidden;
 }
 
-.clipped {
-  line-clamp: 2;
-  overflow: hidden;
-  -webkit-line-clamp: 2;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
+.expandableWrapper {
+  position: relative;
+  margin-bottom: 15px;
 }
-.clipped,
-.expanded {
-  transition: all 0.3s ease;
-  max-height: fit-content;
+
+.measurementElement {
+  pointer-events: none;
+}
+
+.expandableContent {
+  overflow: hidden;
+}
+
+.clampedContent {
+  text-overflow: ellipsis;
 }
 
 .projectTitle {

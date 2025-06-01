@@ -19,8 +19,8 @@ export const useFutureProjects = (): FutureProjectData[] => {
       },
       {
         id: "project2",
-        title: t("visionMission.futureProjects.project1.title"),
-        description: t("visionMission.futureProjects.project1.description"),
+        title: t("visionMission.futureProjects.project2.title"),
+        description: t("visionMission.futureProjects.project2.description"),
       },
     ],
     [t]
