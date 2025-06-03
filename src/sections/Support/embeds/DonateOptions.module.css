@@ -1,0 +1,92 @@
+.embed {
+  width: 100%;
+}
+
+.embed h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--fg-primary);
+}
+
+.embed p {
+  margin-bottom: 1.5rem;
+  color: var(--fg-secondary);
+  line-height: 1.5;
+}
+
+.donationForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.paymentSection {
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-primary);
+}
+
+.paymentTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--fg-primary);
+}
+
+.amountButton {
+  background-color: var(--fg-primary);
+  color: var(--bg-primary);
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  min-width: 45%;
+  justify-content: center;
+  height: 2rem;
+  align-items: center;
+}
+
+.amountButton:hover {
+  background-color: var(--fg-secondary);
+  color: var(--bg-primary);
+}
+
+.logoAndText {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.donateButton {
+  background-color: var(--fg-primary);
+  color: var(--bg-primary);
+}
+
+.donateButton:hover {
+  background-color: var(--accent-color-dark);
+  border-color: var(--accent-color-dark);
+}
+
+.aboutButton {
+  background-color: var(--bg-tertiary);
+  color: var(--fg-primary);
+}
+.aboutButton:hover {
+  border-color: var(--accent-color);
+}
+
+.liqpayButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.liqpayButtons button {
+  flex: 1;
+  min-width: 120px;
+}

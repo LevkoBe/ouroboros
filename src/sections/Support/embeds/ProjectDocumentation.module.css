@@ -1,0 +1,73 @@
+/* Markdown formatting styles for the project documentation content */
+
+.li::before {
+  content: "-> ";
+}
+
+.strong {
+  font-weight: bold;
+  color: var(--fg-primary);
+}
+
+.em {
+  font-style: italic;
+  color: var(--fg-secondary);
+}
+
+.code {
+  background-color: var(--bg-secondary);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+  color: var(--fg-primary);
+}
+
+.ul {
+  margin: 1rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.li {
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+  color: var(--fg-primary);
+  line-height: 1.5;
+}
+
+.p {
+  margin: 1rem 0;
+  color: var(--fg-primary);
+  line-height: 1.6;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: var(--fg-primary);
+  margin: 1.5rem 0 1rem 0;
+  font-weight: 600;
+}
+
+.h1 {
+  font-size: 2rem;
+}
+.h2 {
+  font-size: 1.6rem;
+}
+.h3 {
+  font-size: 1.4rem;
+}
+.h4 {
+  font-size: 1.2rem;
+}
+.h5 {
+  font-size: 1.1rem;
+}
+.h6 {
+  font-size: 1rem;
+}

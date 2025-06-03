@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Support.module.css";
 import VolunteerForm from "./embeds/VolunteerForm";
-import LiqPayDonate from "./embeds/LiqPayDonate";
+import DonateOptions from "./embeds/DonateOptions";
 import PartnerForm from "./embeds/PartnerForm";
 import ShareLinks from "./embeds/ShareLinks";
 import { LuArrowBigRight } from "react-icons/lu";
@@ -18,7 +18,7 @@ const Support: React.FC = () => {
       {
         key: "donate",
         component: (
-          <LiqPayDonate
+          <DonateOptions
             data={t("support.options.donate.data")}
             signature={t("support.options.donate.signature")}
           />
