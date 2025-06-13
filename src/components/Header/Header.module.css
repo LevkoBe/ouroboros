@@ -37,6 +37,13 @@
 .nav ul {
   display: flex;
   list-style: none;
+  background-color: var(--bg-primary);
+  width: fit-content;
+  border: 2px solid var(--border);
+  border-radius: 1rem;
+}
+.nav ul li {
+  width: fit-content;
 }
 
 .nav button {
@@ -59,6 +66,7 @@
   background: none;
   color: var(--fg-primary);
   font-size: 1.5rem;
+  padding: 0.5rem;
 }
 
 @media (max-width: 768px) {
@@ -67,7 +75,7 @@
   }
 
   .mobileMenuButton {
-    display: block;
+    display: flex;
     order: 3;
   }
 
