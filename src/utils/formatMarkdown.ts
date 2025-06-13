@@ -1,4 +1,10 @@
-export function formatMarkdown(markdown: string, styles: { [key: string]: string }): string {
+import defaultStyles from "./formatMarkdown.module.css";
+
+export function formatMarkdown(
+  markdown: string,
+  styles?: { [key: string]: string }
+): string {
+  styles = styles || defaultStyles;
   const escapeHtml = (str: string): string =>
     str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
@@ -15,6 +21,11 @@ export function formatMarkdown(markdown: string, styles: { [key: string]: string
       .replace(
         /`(.+?)`/g,
         (_, m: string) => `<code class="${styles.code}">${m}</code>`
+      )
+      .replace(
+        /\[([^\]]+)]\((https?:\/\/[^\s)]+)\)/g,
+        (_, text: string, url: string) =>
+          `<a href="${url}" class="${styles.a}" target="_blank" rel="noopener noreferrer">${text}</a>`
       );
   };
 
@@ -28,7 +39,9 @@ export function formatMarkdown(markdown: string, styles: { [key: string]: string
         output.push(`<ul class="${styles.ul}">`);
         inList = true;
       }
-      output.push(`<li class="${styles.li}">${parseInline(line.slice(2))}</li>`);
+      output.push(
+        `<li class="${styles.li}">${parseInline(line.slice(2))}</li>`
+      );
     } else {
       if (inList) {
         output.push(`</ul>`);
@@ -38,7 +51,11 @@ export function formatMarkdown(markdown: string, styles: { [key: string]: string
       if (/^#{1,6} /.test(line)) {
         const level = line.match(/^#+/)?.[0].length || 1;
         const content = line.slice(level + 1);
-        output.push(`<h${level} class="${styles[`h${level}`]}">${parseInline(content)}</h${level}>`);
+        output.push(
+          `<h${level} class="${styles[`h${level}`]}">${parseInline(
+            content
+          )}</h${level}>`
+        );
       } else if (line.trim() !== "") {
         output.push(`<p class="${styles.p}">${parseInline(line)}</p>`);
       } else {
