@@ -1,33 +1,20 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Embeds.module.css";
-import {
-  LuFacebook,
-  LuTwitter,
-  LuLinkedin,
-  LuMail,
-  LuCopy,
-  LuCheck,
-} from "react-icons/lu";
+import { LuInstagram, LuMail, LuCopy, LuCheck } from "react-icons/lu";
 
 const ShareLinks: React.FC = () => {
   const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
 
-  // Example URLs
   const shareUrls = {
-    facebook:
-      "https://www.facebook.com/sharer/sharer.php?u=https://ouroboros.com",
-    twitter:
-      "https://twitter.com/intent/tweet?url=https://ouroboros.com&text=Check out this amazing project!",
-    linkedin:
-      "https://www.linkedin.com/sharing/share-offsite/?url=https://ouroboros.com",
     email:
-      "mailto:?subject=Check out this website&body=I thought you might be interested in this: https://ouroboros.com",
+      "mailto:info@ouroboros-ua.com?subject=Check%20out%20Ouroboros&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://ouroboros-ua.com",
+    instagram: "https://www.instagram.com/ouroboros_ua/",
   };
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("https://ouroboros.com");
+    navigator.clipboard.writeText("https://ouroboros-ua.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -39,39 +26,6 @@ const ShareLinks: React.FC = () => {
 
       <div className={styles.socialButtons}>
         <a
-          href={shareUrls.facebook}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.socialButton}
-          aria-label="Share on Facebook"
-        >
-          <LuFacebook className={styles.socialIcon} />
-          <span>Facebook</span>
-        </a>
-
-        <a
-          href={shareUrls.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.socialButton}
-          aria-label="Share on Twitter"
-        >
-          <LuTwitter className={styles.socialIcon} />
-          <span>Twitter</span>
-        </a>
-
-        <a
-          href={shareUrls.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.socialButton}
-          aria-label="Share on LinkedIn"
-        >
-          <LuLinkedin className={styles.socialIcon} />
-          <span>LinkedIn</span>
-        </a>
-
-        <a
           href={shareUrls.email}
           className={styles.socialButton}
           aria-label="Share via Email"
@@ -79,13 +33,24 @@ const ShareLinks: React.FC = () => {
           <LuMail className={styles.socialIcon} />
           <span>Email</span>
         </a>
+
+        <a
+          href={shareUrls.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.socialButton}
+          aria-label="Share on Instagram"
+        >
+          <LuInstagram className={styles.socialIcon} />
+          <span>Instagram</span>
+        </a>
       </div>
 
       <div className={styles.copyLinkWrapper}>
         <input
           type="text"
           readOnly
-          value="https://ouroboros.com"
+          value="https://ouroboros-ua.com"
           className={styles.linkInput}
           aria-label="URL to copy"
         />
@@ -101,7 +66,7 @@ const ShareLinks: React.FC = () => {
           )}
           <span>
             {copied
-              ? t("support.options.share.copied")
+              ? t("support.options.share.emailCopied")
               : t("support.options.share.copy")}
           </span>
         </button>

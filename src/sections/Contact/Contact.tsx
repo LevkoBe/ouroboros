@@ -7,8 +7,7 @@ const Contact: React.FC = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
 
-  const emailAddress = "contact@example.com";
-  const nickname = "@example_nickname";
+  const emailAddress = "info@ouroboros-ua.com";
 
   const copyToClipboard = (text: string, message: string) => {
     navigator.clipboard
@@ -27,11 +26,6 @@ const Contact: React.FC = () => {
     copyToClipboard(emailAddress, t("contact.emailCopied"));
   };
 
-  const handleMessageClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    copyToClipboard(nickname, t("contact.nicknameCopied"));
-  };
-
   return (
     <div>
       <h1 className={styles.heading}>{t("contact.title")}</h1>
@@ -48,9 +42,11 @@ const Contact: React.FC = () => {
             {t("contact.email")}
           </a>
           <a
-            href={`https://t.me/${nickname}`}
+            href={`https://www.instagram.com/ouroboros_ua/`}
             className={styles.messageButton}
-            onClick={handleMessageClick}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Message on Instagram"
           >
             {t("contact.message")}
           </a>
