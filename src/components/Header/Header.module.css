@@ -40,7 +40,6 @@
   background-color: var(--bg-primary);
   width: fit-content;
   border: none;
-  border-radius: 1rem;
 }
 .nav ul li {
   width: fit-content;
@@ -86,13 +85,16 @@
   }
 
   .nav.open {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     margin-top: 1rem;
   }
 
   .nav ul {
     flex-direction: column;
-    border: 2px solid var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
   }
 
   .controls {
