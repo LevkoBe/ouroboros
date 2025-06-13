@@ -66,7 +66,7 @@ const ShareLinks: React.FC = () => {
           )}
           <span>
             {copied
-              ? t("support.options.share.emailCopied")
+              ? t("support.options.share.linkCopied")
               : t("support.options.share.copy")}
           </span>
         </button>
