@@ -164,7 +164,8 @@
       "share": {
         "title": "Spread the Word",
         "description": "Help us reach more people—share this page with your network.",
-        "copy": "Copy Link"
+        "copy": "Copy Link",
+        "emailCopied": "Email copied to clipboard!"
       }
     }
   },
