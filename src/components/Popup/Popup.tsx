@@ -6,9 +6,15 @@ type PopupProps = {
   onClose: () => void;
   title?: string;
   children: ReactNode;
+  fullScreenContent?: boolean;
 };
 
-const Popup: React.FC<PopupProps> = ({ onClose, title, children }) => {
+const Popup: React.FC<PopupProps> = ({
+  onClose,
+  title,
+  children,
+  fullScreenContent,
+}) => {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -28,12 +34,24 @@ const Popup: React.FC<PopupProps> = ({ onClose, title, children }) => {
 
   return ReactDOM.createPortal(
     <div className={styles.overlay} onClick={handleOverlayClick}>
-      <div className={styles.popup}>
-        <button className={styles.closeButton} onClick={onClose}>
-          ×
-        </button>
-        <div className={styles.scrollableContent}>
-          {title && <h2 className={styles.title}>{title}</h2>}
+      <div
+        className={`${styles.popup} ${
+          fullScreenContent ? styles.fullscreen : ""
+        }`}
+      >
+        {!fullScreenContent && (
+          <button className={styles.closeButton} onClick={onClose}>
+            ×
+          </button>
+        )}
+        <div
+          className={`${styles.scrollableContent} ${
+            fullScreenContent ? styles.noScroll : ""
+          }`}
+        >
+          {title && !fullScreenContent && (
+            <h2 className={styles.title}>{title}</h2>
+          )}
           {children}
         </div>
       </div>

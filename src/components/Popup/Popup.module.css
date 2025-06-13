@@ -19,8 +19,8 @@
   background-color: var(--bg-primary);
   border-radius: 12px;
   padding: 2rem;
-  max-width: 75vw;
-  max-height: 90vh;
+  width: 75vw;
+  max-height: 95vh;
   position: relative;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   overflow: hidden;
@@ -78,10 +78,34 @@
   line-height: 1.3;
 }
 
+.fullscreen {
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  max-height: none;
+  max-width: none;
+  box-shadow: none;
+  background: none;
+  border-radius: 0;
+}
+
+.noScroll {
+  scrollbar-width: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.noScroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
 @media (max-width: 768px) {
   .popup {
     margin: 1rem;
     padding: 1.5rem;
+    width: 100%;
   }
 
   .closeButton {
