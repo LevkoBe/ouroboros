@@ -7,6 +7,7 @@ type PopupProps = {
   title?: string;
   children: ReactNode;
   fullScreenContent?: boolean;
+  noScroll?: boolean;
 };
 
 const Popup: React.FC<PopupProps> = ({
@@ -14,6 +15,7 @@ const Popup: React.FC<PopupProps> = ({
   title,
   children,
   fullScreenContent,
+  noScroll,
 }) => {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -39,14 +41,12 @@ const Popup: React.FC<PopupProps> = ({
           fullScreenContent ? styles.fullscreen : ""
         }`}
       >
-        {!fullScreenContent && (
-          <button className={styles.closeButton} onClick={onClose}>
-            ×
-          </button>
-        )}
+        <button className={styles.closeButton} onClick={onClose}>
+          ×
+        </button>
         <div
           className={`${styles.scrollableContent} ${
-            fullScreenContent ? styles.noScroll : ""
+            noScroll ? styles.noScroll : ""
           }`}
         >
           {title && !fullScreenContent && (

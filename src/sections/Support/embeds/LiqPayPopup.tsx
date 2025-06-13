@@ -65,7 +65,7 @@ const LiqPayPopup: React.FC<LiqPayPopupProps> = ({
   }, [data, signature, onClose]);
 
   return (
-    <Popup onClose={onClose}>
+    <Popup onClose={onClose} fullScreenContent>
       <div id="liqpay_checkout_popup" className={styles.liqpayContainer}></div>
     </Popup>
   );

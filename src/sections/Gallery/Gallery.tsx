@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, MouseEvent } from "react";
 import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
 import styles from "./Gallery.module.css";
 import { images } from "@/data/images";
+import Popup from "@/components/Popup/Popup";
 
 export default function Gallery() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -120,21 +121,17 @@ export default function Gallery() {
       </button>
 
       {modalImage && (
-        <div className={styles.modalOverlay} onClick={closeModal}>
+        <Popup onClose={closeModal} fullScreenContent noScroll>
           <img
             src={modalImage}
             alt="Full screen"
-            className={styles.modalImage}
-            onClick={(e) => e.stopPropagation()}
+            style={{
+              height: "100%",
+              objectFit: "contain",
+              borderRadius: "10px",
+            }}
           />
-          <button
-            className={styles.closeButton}
-            onClick={closeModal}
-            aria-label="Close"
-          >
-            ✕
-          </button>
-        </div>
+        </Popup>
       )}
     </div>
   );
