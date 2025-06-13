@@ -38,12 +38,16 @@
   align-items: center;
   gap: 1.5rem;
 }
+.links button {
+  background: none;
+  border: none;
+  color: var(--fg-primary);
+}
 
 .socialLinks {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 0.5rem;
 }
 
 .socialIcon {
@@ -80,5 +84,6 @@
   .socialLinks {
     width: 100%;
     justify-content: center;
+    margin: 0.5rem;
   }
 }

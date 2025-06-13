@@ -128,7 +128,7 @@
         "aboutProject": {
           "button": "About Project",
           "title": "Support the Project: Street Animal Support in Kherson and Mykolaiv",
-          "description": "Our Street Animal Support Project helps vulnerable street dogs and cats in frontline and affected areas of southern Ukraine, especially Kherson and Mykolaiv. Many animals have been abandoned or injured due to the war, and local volunteers—fearless and devoted—struggle to care for them with limited resources.  \n## Project Goals:  \n- Purchase quality pet food from local producers to support both street animals and the local economy.  \n- Provide mobility aids such as wheelchairs for wounded dogs who have lost or injured their legs in conflict zones.  \n- Support local shelters and volunteer groups feeding and caring for street animals daily.  \n## Estimated Budget:  \n**$2,000 USD**  \nThis covers regular pet food deliveries and the purchase and shipping of specialized wheelchairs for disabled dogs in Kherson.  \n## Project Timeline:  \nAll purchases and deliveries will be completed within one month after the funding goal is reached.  \n### If the project cannot be fully realized or there are leftover funds:  \nRemaining funds will be redirected to other urgent animal welfare and humanitarian aid initiatives for people from the frontline zones within our foundation’s work in the south of Ukraine.  \n## Important Information for Donors:  \n*By donating to this project, you agree that your contribution may be reallocated to other related projects if this campaign concludes, becomes inactive, or cannot proceed.*  \n**Donations are non-refundable.**  \n**Help us care for the forgotten paws of Kherson and Mykolaiv — support the street animals today!**  \n## SUPPORT THE PROJECT\n"
+          "description": "Our Street Animal Support Project helps vulnerable street dogs and cats in frontline and affected areas of southern Ukraine, especially Kherson and Mykolaiv. Many animals have been abandoned or injured due to the war, and local volunteers—fearless and devoted—struggle to care for them with limited resources.  \n## Project Goals:  \n- Purchase quality pet food from local producers to support both street animals and the local economy.  \n- Provide mobility aids such as wheelchairs for wounded dogs who have lost or injured their legs in conflict zones.  \n- Support local shelters and volunteer groups feeding and caring for street animals daily.  \n## Estimated Budget:  \n**$2,000 USD**  \nThis covers regular pet food deliveries and the purchase and shipping of specialized wheelchairs for disabled dogs in Kherson.  \n## Project Timeline:  \nAll purchases and deliveries will be completed within one month after the funding goal is reached.  \n### If the project cannot be fully realized or there are leftover funds:  \nRemaining funds will be redirected to other urgent animal welfare and humanitarian aid initiatives for people from the frontline zones within our foundation’s work in the south of Ukraine.  \n## Important Information for Donors:  \n*By donating to this project, you agree that your contribution may be reallocated to other related projects if this campaign concludes, becomes inactive, or cannot proceed.*  \n**Donations are non-refundable.**  \n**Help us care for the forgotten paws of Kherson and Mykolaiv — support the street animals today!**"
         },
         "data": "eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXlkb25hdGUiLCJhbW91bnQiOiIxMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoiQ2hhcml0eSBkb25hdGlvbiIsInB1YmxpY19rZXkiOiJzYW5kYm94X2kyNTEzODE4NTAxOSIsImxhbmd1YWdlIjoiZW4ifQ==",
         "signature": "cEYdldOZGtAmTDPNDKS8YsnPjec="
@@ -194,11 +194,18 @@
     "nicknameCopied": "Nickname copied to clipboard!"
   },
   "footer": {
-    "copyright": "© 2025 Ouroboros. All rights reserved.",
     "links": {
       "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "github": "GitHub"
+      "terms": "Terms of Service"
+    },
+    "copyright": "© Ouroboros. All rights reserved.",
+    "privacyPopup": {
+      "title": "Privacy Policy",
+      "content": "This website does not collect or store any personal data. We do not use cookies, and we do not offer account creation or user tracking features.\nHowever, our donation checkout is powered by LiqPay, a third-party payment service that may collect data according to its own privacy policy. Please consult [LiqPay](https://www.liqpay.ua/en/) for more information.\nWe link to PayPal for donations handled by our foundation. These transactions occur externally and are not processed through this website."
+    },
+    "termsPopup": {
+      "title": "Terms of Service",
+      "content": "By using this site, you acknowledge that:\n- We provide all content as-is without warranty.\n- There is no user registration, thus no stored credentials or data.\n- Third-party payment providers (e.g., LiqPay) are responsible for their own services."
     }
   },
   "theme": {

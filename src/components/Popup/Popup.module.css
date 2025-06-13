@@ -11,6 +11,8 @@
   align-items: center;
   z-index: 1000;
   padding: 0.5rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .popup {
@@ -19,10 +21,11 @@
   padding: 2rem;
   max-width: 700px;
   width: 100%;
-  height: 100%;
+  max-height: 100%;
   position: relative;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
+  overflow: overlay;
+  animation: fadeInPopup 0.35s ease forwards;
 }
 
 .closeButton {
@@ -93,5 +96,16 @@
 
   .title {
     font-size: 1.5rem;
+  }
+}
+
+@keyframes fadeInPopup {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
