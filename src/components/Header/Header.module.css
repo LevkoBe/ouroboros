@@ -39,7 +39,7 @@
   list-style: none;
   background-color: var(--bg-primary);
   width: fit-content;
-  border: 2px solid var(--border);
+  border: none;
   border-radius: 1rem;
 }
 .nav ul li {
@@ -92,6 +92,7 @@
 
   .nav ul {
     flex-direction: column;
+    border: 2px solid var(--border);
   }
 
   .controls {
