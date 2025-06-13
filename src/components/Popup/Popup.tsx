@@ -1,4 +1,5 @@
 import React, { useEffect, ReactNode } from "react";
+import ReactDOM from "react-dom";
 import styles from "./Popup.module.css";
 
 type PopupProps = {
@@ -25,16 +26,19 @@ const Popup: React.FC<PopupProps> = ({ onClose, title, children }) => {
     if (e.target === e.currentTarget) onClose();
   };
 
-  return (
+  return ReactDOM.createPortal(
     <div className={styles.overlay} onClick={handleOverlayClick}>
       <div className={styles.popup}>
         <button className={styles.closeButton} onClick={onClose}>
           ×
         </button>
-        {title && <h2 className={styles.title}>{title}</h2>}
-        <div className={styles.scrollableContent}>{children}</div>
+        <div className={styles.scrollableContent}>
+          {title && <h2 className={styles.title}>{title}</h2>}
+          {children}
+        </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
