@@ -1,36 +1,24 @@
-import { useState, useRef, useEffect, useMemo, MouseEvent } from "react";
+import { useState, useRef, useEffect, MouseEvent } from "react";
 import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
 import styles from "./Gallery.module.css";
 import { images } from "@/data/images";
-import { useTranslation } from "react-i18next";
 
 export default function Gallery() {
-  const { t } = useTranslation();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollStartLeft, setScrollStartLeft] = useState(0);
 
-  const imagesSet = useMemo(
-    () =>
-      images.map((image) => ({
-        url: image.src,
-        alt: t(image.altKey),
-      })),
-    [t]
-  );
+  const [modalImage, setModalImage] = useState<string | null>(null);
 
-  const extendedImages = useMemo(
-    () => [...imagesSet, ...imagesSet, ...imagesSet],
-    [imagesSet]
-  );
+  const extendedImages = [...images, ...images, ...images];
 
   useEffect(() => {
     const container = scrollContainerRef.current;
-    if (container && extendedImages.length) {
+    if (container) {
       container.scrollLeft = Math.floor(container.scrollWidth / 3);
     }
-  }, [extendedImages.length]);
+  }, []);
 
   useEffect(() => {
     const container = scrollContainerRef.current;
@@ -63,6 +51,7 @@ export default function Gallery() {
 
   const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
     if (!scrollContainerRef.current) return;
+    if ((e.target as HTMLElement).tagName === "IMG") return;
     setIsDragging(true);
     setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
     setScrollStartLeft(scrollContainerRef.current.scrollLeft);
@@ -74,7 +63,7 @@ export default function Gallery() {
     if (!isDragging || !scrollContainerRef.current) return;
     e.preventDefault();
     const x = e.pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // speed factor
+    const walk = (x - startX) * 2;
     scrollContainerRef.current.scrollLeft = scrollStartLeft - walk;
   };
 
@@ -86,6 +75,9 @@ export default function Gallery() {
       behavior: "smooth",
     });
   };
+
+  const openModal = (src: string) => setModalImage(src);
+  const closeModal = () => setModalImage(null);
 
   return (
     <div className={styles.galleryContainer}>
@@ -109,10 +101,12 @@ export default function Gallery() {
         {extendedImages.map((image, index) => (
           <div key={index} className={styles.imageContainer}>
             <img
-              src={image.url}
-              alt={image.alt}
+              src={image.src}
+              alt={`Gallery image ${index + 1}`}
               className={styles.image}
               draggable="false"
+              onClick={() => openModal(image.src)}
+              style={{ pointerEvents: "auto" }}
             />
           </div>
         ))}
@@ -124,6 +118,24 @@ export default function Gallery() {
       >
         <LuArrowRight size={40} />
       </button>
+
+      {modalImage && (
+        <div className={styles.modalOverlay} onClick={closeModal}>
+          <img
+            src={modalImage}
+            alt="Full screen"
+            className={styles.modalImage}
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            className={styles.closeButton}
+            onClick={closeModal}
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+      )}
     </div>
   );
 }
