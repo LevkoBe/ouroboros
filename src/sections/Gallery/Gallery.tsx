@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, MouseEvent } from "react";
+import { useState, useRef, useEffect, MouseEvent, useCallback } from "react";
 import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
 import styles from "./Gallery.module.css";
 import { images } from "@/data/images";
@@ -9,10 +9,31 @@ export default function Gallery() {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollStartLeft, setScrollStartLeft] = useState(0);
-
   const [modalImage, setModalImage] = useState<string | null>(null);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const extendedImages = [...images, ...images, ...images];
+
+  const handleScroll = useCallback(() => {
+    const container = scrollContainerRef.current;
+    if (!container || isScrolling) return;
+
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
+
+    scrollTimeoutRef.current = setTimeout(() => {
+      const { scrollLeft, scrollWidth, clientWidth } = container;
+      const third = scrollWidth / 3;
+
+      if (scrollLeft >= third * 2 - 50) {
+        container.scrollLeft = scrollLeft - third;
+      } else if (scrollLeft <= third - clientWidth + 50) {
+        container.scrollLeft = scrollLeft + third;
+      }
+    }, 150);
+  }, [isScrolling]);
 
   useEffect(() => {
     const container = scrollContainerRef.current;
@@ -25,30 +46,14 @@ export default function Gallery() {
     const container = scrollContainerRef.current;
     if (!container) return;
 
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const { scrollLeft, scrollWidth, clientWidth } = container;
-          const third = scrollWidth / 3;
-
-          if (scrollLeft >= third * 2) {
-            container.scrollLeft = scrollLeft - third;
-          } else if (scrollLeft <= third - clientWidth) {
-            container.scrollLeft = scrollLeft + third;
-          }
-
-          ticking = false;
-        });
-
-        ticking = true;
+    container.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
       }
     };
-
-    container.addEventListener("scroll", handleScroll);
-    return () => container.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
     if (!scrollContainerRef.current) return;
@@ -68,14 +73,22 @@ export default function Gallery() {
     scrollContainerRef.current.scrollLeft = scrollStartLeft - walk;
   };
 
-  const scrollByDirection = (direction: "left" | "right") => {
+  const scrollByDirection = useCallback((direction: "left" | "right") => {
     if (!scrollContainerRef.current) return;
+
+    setIsScrolling(true);
+
     const scrollAmount = scrollContainerRef.current.clientWidth * 0.8;
+
     scrollContainerRef.current.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     });
-  };
+
+    setTimeout(() => {
+      setIsScrolling(false);
+    }, 600);
+  }, []);
 
   const openModal = (src: string) => setModalImage(src);
   const closeModal = () => setModalImage(null);
@@ -85,6 +98,7 @@ export default function Gallery() {
       <button
         className={`${styles.arrow} ${styles.leftArrow}`}
         onClick={() => scrollByDirection("left")}
+        type="button"
       >
         <LuArrowLeft size={40} />
       </button>
@@ -100,7 +114,7 @@ export default function Gallery() {
         onMouseMove={handleMouseMove}
       >
         {extendedImages.map((image, index) => (
-          <div key={index} className={styles.imageContainer}>
+          <div key={`${image.src}-${index}`} className={styles.imageContainer}>
             <img
               src={image.src}
               alt={`Gallery image ${index + 1}`}
@@ -108,6 +122,7 @@ export default function Gallery() {
               draggable="false"
               onClick={() => openModal(image.src)}
               style={{ pointerEvents: "auto" }}
+              loading="lazy"
             />
           </div>
         ))}
@@ -116,6 +131,7 @@ export default function Gallery() {
       <button
         className={`${styles.arrow} ${styles.rightArrow}`}
         onClick={() => scrollByDirection("right")}
+        type="button"
       >
         <LuArrowRight size={40} />
       </button>
