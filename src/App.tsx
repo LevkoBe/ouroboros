@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import LoadingScreen from "./LoadingScreen";
 import Home from "./sections/Home/Home";
 import About from "./sections/About/About";
 import Projects from "./sections/Projects/Projects";
@@ -14,28 +13,9 @@ import VisionMission from "./sections/VisionMission/VisionMission";
 import Partners from "./sections/Partners/Partners";
 
 const App: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulating initial load delay
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return (
-      <ThemeProvider>
-        <LoadingScreen />
-      </ThemeProvider>
-    );
-  }
-
   return (
-    <LangProvider>
-      <ThemeProvider>
+    <ThemeProvider>
+      <LangProvider>
         <div className="app">
           <Header />
           <main>
@@ -66,8 +46,8 @@ const App: React.FC = () => {
           </main>
           <Footer />
         </div>
-      </ThemeProvider>
-    </LangProvider>
+      </LangProvider>
+    </ThemeProvider>
   );
 };
 

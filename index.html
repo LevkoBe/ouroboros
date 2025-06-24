@@ -27,6 +27,8 @@
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://levkobe.github.io/ouroboros" />
+    <link rel="stylesheet" href="/src/styles/loading.css" />
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -47,7 +49,18 @@
     </script>
   </head>
   <body>
+    <div class="loading-screen">
+      <div class="logo-container">
+        <img
+          id="spinning-logo"
+          class="spinning-logo"
+          src="./logo.svg"
+          alt="Loading..."
+        />
+      </div>
+    </div>
     <div id="root"></div>
+    <script src="/src/loader.js"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
