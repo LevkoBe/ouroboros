@@ -86,7 +86,7 @@ Let’s build something lasting—together.`}}},d1={title:"Support Our Mission",
 **$2,000 USD**  
 This covers regular pet food deliveries and the purchase and shipping of specialized wheelchairs for disabled dogs in Kherson.  
 ## Project Timeline:  
-All purchases and deliveries will be completed within one month after the funding goal is reached.  
+Until 31.08.2025  
 ### If the project cannot be fully realized or there are leftover funds:  
 Remaining funds will be redirected to other urgent animal welfare and humanitarian aid initiatives for people from the frontline zones within our foundation’s work in the south of Ukraine.  
 ## Important Information for Donors:  
@@ -133,7 +133,7 @@ We link to PayPal for donations handled by our foundation. These transactions oc
 **2 000 доларів США**  
 Ці кошти покриють регулярні поставки корму та закупівлю з доставкою спеціалізованих візків для собак з інвалідністю у Херсоні.  
 ## Терміни реалізації:  
-Усі закупівлі та доставки будуть завершені протягом одного місяця після досягнення мети фінансування.  
+До 31.08.2025  
 ### Якщо проєкт не вдасться реалізувати повністю або залишаться кошти:  
 Невикористані кошти буде переадресовано на інші нагальні ініціативи з допомоги тваринам або гуманітарні проєкти для людей з прифронтових зон у межах діяльності нашого фонду на півдні України.  
 ## Важлива інформація для донорів:  
