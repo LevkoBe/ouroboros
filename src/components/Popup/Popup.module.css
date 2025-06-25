@@ -36,21 +36,9 @@
   position: absolute;
   top: 1rem;
   right: 2rem;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--fg-secondary);
-  background-color: var(--bg-primary);
   width: 2.5rem;
   height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: all 0.2s ease;
-}
-.closeButton:hover {
-  background-color: var(--bg-secondary);
-  color: var(--fg-primary);
 }
 
 .scrollableContent {
@@ -115,12 +103,6 @@
     padding: 1.5rem;
     width: 100%;
   }
-
-  .closeButton {
-    top: 0.5rem;
-    right: 0.5rem;
-  }
-
   .scrollableContent {
     padding-right: 1rem;
   }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Embeds.module.css";
+import { Button } from "@/components/Button/Button";
 
 const PartnerForm: React.FC = () => {
   const { t } = useTranslation();
@@ -102,7 +103,7 @@ const PartnerForm: React.FC = () => {
           />
         </div>
 
-        <button type="submit">{t("support.options.partner.submit")}</button>
+        <Button type="submit">{t("support.options.partner.submit")}</Button>
       </form>
     </div>
   );

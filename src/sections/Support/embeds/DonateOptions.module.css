@@ -22,7 +22,7 @@
 
 .paymentSection {
   padding: 1.5rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-soft-color);
   border-radius: 8px;
   background-color: var(--bg-primary);
 }

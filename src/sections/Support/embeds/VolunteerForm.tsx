@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Embeds.module.css";
+import { Button } from "@/components/Button/Button";
 
 const VolunteerForm: React.FC = () => {
   const { t } = useTranslation();
@@ -66,7 +67,7 @@ const VolunteerForm: React.FC = () => {
           />
         </div>
 
-        <button type="submit">{t("support.options.volunteer.submit")}</button>
+        <Button type="submit">{t("support.options.volunteer.submit")}</Button>
       </form>
     </div>
   );

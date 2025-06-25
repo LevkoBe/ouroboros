@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { LangContext } from "../../contexts/LangContext";
+import { Button } from "../Button/Button";
 
 const LanguageSelector: React.FC = () => {
   const { language, changeLanguage } = useContext(LangContext);
@@ -11,13 +12,14 @@ const LanguageSelector: React.FC = () => {
   };
 
   return (
-    <button
-      style={{ fontSize: "0.875rem", padding: "0.25rem 0.5rem" }}
+    <Button
+      variant="outlined"
+      style={{ fontSize: "0.75rem", padding: "0.25rem 0.5rem" }}
       onClick={toggleLanguage}
       aria-label={t(`language.${language}`)}
     >
       {language === "en" ? "EN" : "UA"}
-    </button>
+    </Button>
   );
 };
 

@@ -13,7 +13,7 @@ import { Button } from "../Button/Button";
 interface Props {
   text: string;
   clampLines?: number;
-  variant?: "primary" | "outlined" | "tertiary";
+  variant?: "primary" | "outlined" | "tertiary" | "text";
   onChange?: (isExpanded: boolean) => void;
 }
 
@@ -108,7 +108,6 @@ export const ExpandableContent = ({
         variant={variant}
         style={{ marginTop: "1rem" }}
         onClick={handleChange}
-        className={styles.learnMoreButton}
       >
         {isExpanded ? t("common.button.less") : t("common.button.more")}
       </Button>

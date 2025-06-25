@@ -6,6 +6,7 @@ import { ThemeContext } from "@/contexts/ThemeContext";
 import Popup from "../Popup/Popup";
 import { formatMarkdown } from "@/utils/formatMarkdown";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
+import { Button } from "../Button/Button";
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -44,12 +45,12 @@ const Footer: React.FC = () => {
           </div>
 
           <div className={styles.links}>
-            <button onClick={handlePopup("privacy")}>
+            <Button variant="text" onClick={handlePopup("privacy")}>
               {t("footer.links.privacy")}
-            </button>
-            <button onClick={handlePopup("terms")}>
+            </Button>
+            <Button variant="text" onClick={handlePopup("terms")}>
               {t("footer.links.terms")}
-            </button>
+            </Button>
           </div>
         </div>
 

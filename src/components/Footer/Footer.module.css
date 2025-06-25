@@ -38,11 +38,6 @@
   align-items: center;
   gap: 1.5rem;
 }
-.links button {
-  background: none;
-  border: none;
-  color: var(--fg-primary);
-}
 
 .socialLinks {
   display: flex;

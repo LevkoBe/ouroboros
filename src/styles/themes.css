@@ -18,7 +18,8 @@
   --bg-secondary: var(--color-2);
   --fg-primary: var(--color-8);
   --fg-secondary: var(--color-6);
-  --border: var(--color-3);
+  --border-soft: var(--color-3);
+  --border-strong: var(--color-5);
 }
 
 :root[data-theme="dark"] {
@@ -27,5 +28,6 @@
   --bg-secondary: var(--color-7);
   --fg-primary: var(--color-1);
   --fg-secondary: var(--color-3);
-  --border: var(--color-6);
+  --border-soft: var(--color-6);
+  --border-strong: var(--color-4);
 }

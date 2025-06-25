@@ -52,13 +52,6 @@
   text-overflow: ellipsis;
 }
 
-.closeButton {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  aspect-ratio: 1;
-}
-
 .overlay {
   position: fixed;
   inset: 0;

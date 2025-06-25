@@ -6,6 +6,7 @@ import DonateOptions from "./embeds/DonateOptions";
 import PartnerForm from "./embeds/PartnerForm";
 import ShareLinks from "./embeds/ShareLinks";
 import { LuArrowBigRight } from "react-icons/lu";
+import { Button } from "@/components/Button/Button";
 
 type SupportOption = "donate" | "volunteer" | "partner" | "share";
 
@@ -50,14 +51,9 @@ const Support: React.FC = () => {
               {activeOption === opt.key && (
                 <LuArrowBigRight className={styles.activeIcon} />
               )}
-              <button
-                className={`${styles.optionButton} ${
-                  activeOption === opt.key ? styles.active : ""
-                }`}
-                onClick={() => handleOptionClick(opt.key)}
-              >
+              <Button variant="text" onClick={() => handleOptionClick(opt.key)}>
                 {t(`support.options.${opt.key}.title`)}
-              </button>
+              </Button>
               {idx < SUPPORT_OPTIONS.length - 1 && (
                 <span className={styles.separator}>·</span>
               )}

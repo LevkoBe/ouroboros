@@ -3,6 +3,7 @@ import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
 import styles from "./Gallery.module.css";
 import { images } from "@/data/images";
 import Popup from "@/components/Popup/Popup";
+import { Button } from "@/components/Button/Button";
 
 export default function Gallery() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -95,13 +96,9 @@ export default function Gallery() {
 
   return (
     <div className={styles.galleryContainer}>
-      <button
-        className={`${styles.arrow} ${styles.leftArrow}`}
-        onClick={() => scrollByDirection("left")}
-        type="button"
-      >
+      <Button onClick={() => scrollByDirection("left")}>
         <LuArrowLeft size={40} />
-      </button>
+      </Button>
 
       <div
         ref={scrollContainerRef}
@@ -128,13 +125,9 @@ export default function Gallery() {
         ))}
       </div>
 
-      <button
-        className={`${styles.arrow} ${styles.rightArrow}`}
-        onClick={() => scrollByDirection("right")}
-        type="button"
-      >
+      <Button onClick={() => scrollByDirection("right")}>
         <LuArrowRight size={40} />
-      </button>
+      </Button>
 
       {modalImage && (
         <Popup onClose={closeModal} fullScreenContent noScroll>

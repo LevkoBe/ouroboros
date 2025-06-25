@@ -4,6 +4,7 @@ import styles from "./DonateOptions.module.css";
 import LiqPayPopup from "./LiqPayPopup";
 import ProjectDocumentation from "./ProjectDocumentation";
 import { SiPaypal } from "react-icons/si";
+import { Button } from "@/components/Button/Button";
 
 type DonateOptionsProps = {
   data: string;
@@ -40,18 +41,15 @@ const DonateOptions: React.FC<DonateOptionsProps> = ({ data, signature }) => {
         <div className={styles.paymentSection}>
           <h4 className={styles.paymentTitle}>LiqPay</h4>
           <div className={styles.liqpayButtons}>
-            <button
-              className={styles.amountButton}
-              onClick={() => setShowLiqPayPopup(true)}
-            >
+            <Button onClick={() => setShowLiqPayPopup(true)}>
               {t("support.options.donate.title")}
-            </button>
-            <button
-              className={`${styles.aboutButton}`}
+            </Button>
+            <Button
+              variant="outlined"
               onClick={() => setShowDocumentation(true)}
             >
               {t("support.options.donate.aboutProject.button")}
-            </button>
+            </Button>
           </div>
         </div>
       </div>

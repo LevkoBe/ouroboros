@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Embeds.module.css";
 import { LuInstagram, LuMail, LuCopy, LuCheck } from "react-icons/lu";
+import { Button } from "@/components/Button/Button";
 
 const ShareLinks: React.FC = () => {
   const { t } = useTranslation();
@@ -54,11 +55,7 @@ const ShareLinks: React.FC = () => {
           className={styles.linkInput}
           aria-label="URL to copy"
         />
-        <button
-          className={styles.copyBtn}
-          onClick={handleCopy}
-          aria-label={copied ? "Copied" : "Copy to clipboard"}
-        >
+        <Button variant="text" style={{ flex: 1 }} onClick={handleCopy}>
           {copied ? (
             <LuCheck className={styles.copyIcon} />
           ) : (
@@ -69,7 +66,7 @@ const ShareLinks: React.FC = () => {
               ? t("support.options.share.linkCopied")
               : t("support.options.share.copy")}
           </span>
-        </button>
+        </Button>
       </div>
     </div>
   );

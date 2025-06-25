@@ -1,6 +1,7 @@
 import React, { useEffect, ReactNode } from "react";
 import ReactDOM from "react-dom";
 import styles from "./Popup.module.css";
+import { Button } from "../Button/Button";
 
 type PopupProps = {
   onClose: () => void;
@@ -41,9 +42,21 @@ const Popup: React.FC<PopupProps> = ({
           fullScreenContent ? styles.fullscreen : ""
         }`}
       >
-        <button className={styles.closeButton} onClick={onClose}>
+        <Button
+          variant="outlined"
+          style={{
+            position: "absolute",
+            top: "1rem",
+            right: "1rem",
+            width: "2rem",
+            height: "2rem",
+            border: "none",
+            fontSize: "2rem",
+          }}
+          onClick={onClose}
+        >
           ×
-        </button>
+        </Button>
         <div
           className={`${styles.scrollableContent} ${
             noScroll ? styles.noScroll : ""

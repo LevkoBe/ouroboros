@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Projects.module.css";
 import { useProjects } from "@/hooks/useProjects";
+import { Button } from "@/components/Button/Button";
 
 const MIN_CARD_WIDTH = 250;
 const GAP = 16;
@@ -160,7 +161,7 @@ const Projects: React.FC = () => {
                         {line}
                       </div>
                     ))}
-                    <button className={styles.closeButton}>✕</button>
+                    <Button>✕</Button>
                   </div>
                 ) : (
                   <div className={styles.descriptionContainer}>
@@ -168,7 +169,7 @@ const Projects: React.FC = () => {
                     <p className={styles.projectDescription}>
                       {project.description}
                     </p>
-                    <button>{t("common.button.more")}</button>
+                    <Button>{t("common.button.more")}</Button>
                   </div>
                 )}
               </div>

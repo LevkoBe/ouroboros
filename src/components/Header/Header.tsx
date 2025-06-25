@@ -6,6 +6,7 @@ import { useScrollToSection } from "../../hooks/useScrollToSection";
 import styles from "./Header.module.css";
 import { ThemeContext } from "@/contexts/ThemeContext";
 import { LuMenu, LuX } from "react-icons/lu";
+import { Button } from "../Button/Button";
 
 const Header: React.FC = () => {
   const { t } = useTranslation();
@@ -36,59 +37,32 @@ const Header: React.FC = () => {
           <span>Ouroboros</span>
         </div>
 
-        <button
-          className={`${styles.mobileMenuButton} clickable`}
-          onClick={toggleMobileMenu}
-          aria-label={
-            mobileMenuOpen
-              ? t("ariaLabels.closeMenu")
-              : t("ariaLabels.openMenu")
-          }
-        >
-          {mobileMenuOpen ? <LuX /> : <LuMenu />}
-        </button>
-
         <nav className={`${styles.nav} ${mobileMenuOpen ? styles.open : ""}`}>
-          <ul>
+          <ul className={styles.outlined}>
             <li>
-              <button
-                className="clickable"
-                onClick={() => handleNavClick("home")}
-              >
+              <Button variant="text" onClick={() => handleNavClick("home")}>
                 {t("header.home")}
-              </button>
+              </Button>
             </li>
             <li>
-              <button
-                className="clickable"
-                onClick={() => handleNavClick("about")}
-              >
+              <Button variant="text" onClick={() => handleNavClick("about")}>
                 {t("header.about")}
-              </button>
+              </Button>
             </li>
             <li>
-              <button
-                className="clickable"
-                onClick={() => handleNavClick("projects")}
-              >
+              <Button variant="text" onClick={() => handleNavClick("projects")}>
                 {t("header.projects")}
-              </button>
+              </Button>
             </li>
             <li>
-              <button
-                className="clickable"
-                onClick={() => handleNavClick("support")}
-              >
+              <Button variant="text" onClick={() => handleNavClick("support")}>
                 {t("header.support")}
-              </button>
+              </Button>
             </li>
             <li>
-              <button
-                className="clickable"
-                onClick={() => handleNavClick("contact")}
-              >
+              <Button variant="text" onClick={() => handleNavClick("contact")}>
                 {t("header.contact")}
-              </button>
+              </Button>
             </li>
           </ul>
         </nav>
@@ -97,6 +71,20 @@ const Header: React.FC = () => {
           <ThemeToggle />
           <LanguageSelector />
         </div>
+
+        <Button
+          variant="outlined"
+          onMobile={true}
+          style={{ padding: "0.5rem" }}
+          onClick={toggleMobileMenu}
+          aria-label={
+            mobileMenuOpen
+              ? t("ariaLabels.closeMenu")
+              : t("ariaLabels.openMenu")
+          }
+        >
+          {mobileMenuOpen ? <LuX /> : <LuMenu />}
+        </Button>
       </div>
     </header>
   );

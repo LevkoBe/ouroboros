@@ -28,6 +28,7 @@ const About = () => {
           <ExpandableContent
             text={t("about.text")}
             clampLines={5}
+            variant="primary"
             onChange={setIsExpended}
           />
         </div>
