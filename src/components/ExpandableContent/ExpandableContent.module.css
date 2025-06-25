@@ -1,0 +1,34 @@
+.measurementElement {
+  pointer-events: none;
+}
+
+.expandableContent {
+  transition: height 1s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.clampedContent {
+  text-overflow: ellipsis;
+}
+
+.expandableWrapper {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.visible {
+  max-height: min-content;
+}
+
+.hidden {
+  max-height: 0;
+}
+
+.learnMoreButton {
+  color: var(--fg-primary);
+  border: 2px solid var(--border);
+  background-color: var(--bg-primary);
+}
+.learnMoreButton:hover {
+  color: var(--fg-secondary);
+}

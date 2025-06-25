@@ -35,63 +35,8 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.mainText,
-.extendedText {
-  transition: all 1s ease;
-  overflow: hidden;
-}
-
-.expandableWrapper {
-  position: relative;
-  margin-bottom: 15px;
-}
-
-.measurementElement {
-  pointer-events: none;
-}
-
-.expandableContent {
-  overflow: hidden;
-}
-
-.clampedContent {
-  text-overflow: ellipsis;
-}
-
 .projectTitle {
   margin-top: 1rem;
-}
-
-.extendedText {
-  margin-bottom: 1rem;
-}
-
-.extendedText p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--fg-secondary);
-  margin-bottom: 1rem;
-}
-
-.visible {
-  max-height: 1000px;
-}
-
-.hidden {
-  max-height: 0;
-}
-
-.learnMoreButton {
-  color: var(--fg-primary);
-  border: 2px solid var(--border);
-  background-color: var(--bg-primary);
-}
-.learnMoreButton:hover {
-  color: var(--fg-secondary);
-}
-
-.li::before {
-  content: "-> ";
 }
 
 @media (max-width: 768px) {
