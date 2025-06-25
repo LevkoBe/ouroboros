@@ -13,17 +13,19 @@
 }
 
 :root[data-theme="light"] {
-  --bg-primary: var(--color-0);
-  --bg-secondary: var(--color-1);
-  --fg-primary: var(--color-9);
+  --accent: var(var(--color-0));
+  --bg-primary: var(--color-1);
+  --bg-secondary: var(--color-2);
+  --fg-primary: var(--color-8);
   --fg-secondary: var(--color-6);
   --border: var(--color-3);
 }
 
 :root[data-theme="dark"] {
-  --bg-primary: var(--color-9);
-  --bg-secondary: var(--color-8);
-  --fg-primary: var(--color-0);
+  --accent: var(var(--color-9));
+  --bg-primary: var(--color-8);
+  --bg-secondary: var(--color-7);
+  --fg-primary: var(--color-1);
   --fg-secondary: var(--color-3);
   --border: var(--color-6);
 }
