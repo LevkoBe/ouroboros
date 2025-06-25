@@ -1,17 +1,26 @@
-import { useRef, useState, useEffect } from "react";
+import {
+  useRef,
+  useState,
+  useEffect,
+  useLayoutEffect,
+  useCallback,
+} from "react";
 import { formatMarkdown } from "@/utils/formatMarkdown";
 import styles from "./ExpandableContent.module.css";
 import { useTranslation } from "react-i18next";
+import { Button } from "../Button/Button";
 
 interface Props {
   text: string;
   clampLines?: number;
+  variant?: "primary" | "outlined" | "tertiary";
   onChange?: (isExpanded: boolean) => void;
 }
 
 export const ExpandableContent = ({
   text,
   clampLines = 2,
+  variant = "outlined",
   onChange,
 }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -21,21 +30,43 @@ export const ExpandableContent = ({
   const html = formatMarkdown(text);
   const { t } = useTranslation();
 
+  const measureHeights = useCallback(() => {
+    if (expandedRef.current && clampedRef.current) {
+      const clampedHeight = clampedRef.current.scrollHeight;
+      const expandedHeight = expandedRef.current.scrollHeight;
+
+      setHeights({
+        clamped: `${clampedHeight}px`,
+        expanded: `${expandedHeight}px`,
+      });
+    }
+  }, []);
+
+  useLayoutEffect(() => {
+    measureHeights();
+  }, [clampLines, html, measureHeights]);
+
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver(() => {
+      const timer = setTimeout(measureHeights, 50);
+      return () => clearTimeout(timer);
+    });
+
+    if (expandedRef.current) {
+      resizeObserver.observe(expandedRef.current);
+    }
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [measureHeights]);
+
   const handleChange = () => {
     if (onChange) {
       onChange(!isExpanded);
     }
     setIsExpanded(!isExpanded);
   };
-
-  useEffect(() => {
-    if (expandedRef.current && clampedRef.current) {
-      setHeights({
-        clamped: `${clampedRef.current.scrollHeight}px`,
-        expanded: `${expandedRef.current.scrollHeight}px`,
-      });
-    }
-  }, [clampLines, html]);
 
   const clampedStyle = {
     display: "-webkit-box",
@@ -54,7 +85,8 @@ export const ExpandableContent = ({
   );
 
   return (
-    <div className={styles.expendableWrapper}>
+    <div className={styles.expandableWrapper}>
+      {/* Measurement containers */}
       <div ref={clampedRef} className={styles.measurements}>
         <ContentBlock clamped />
       </div>
@@ -62,7 +94,7 @@ export const ExpandableContent = ({
         <ContentBlock />
       </div>
 
-      {/* Actual content */}
+      {/* Actual visible content */}
       <div
         className={styles.expandableContent}
         style={{
@@ -71,13 +103,15 @@ export const ExpandableContent = ({
       >
         <ContentBlock clamped={!isExpanded} />
       </div>
-      <button
+
+      <Button
+        variant={variant}
         style={{ marginTop: "1rem" }}
         onClick={handleChange}
         className={styles.learnMoreButton}
       >
         {isExpanded ? t("common.button.less") : t("common.button.more")}
-      </button>
+      </Button>
     </div>
   );
 };

@@ -16,20 +16,13 @@
   position: absolute;
   visibility: hidden;
   max-width: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
-
 .visible {
   max-height: min-content;
 }
 .hidden {
   max-height: 0;
-}
-
-.learnMoreButton {
-  color: var(--fg-primary);
-  border: 2px solid var(--border);
-  background-color: var(--bg-primary);
-}
-.learnMoreButton:hover {
-  color: var(--fg-secondary);
 }
