@@ -6,15 +6,27 @@ import { useTranslation } from "react-i18next";
 interface Props {
   text: string;
   clampLines?: number;
+  onChange?: (isExpanded: boolean) => void;
 }
 
-export const ExpandableContent = ({ text, clampLines = 2 }: Props) => {
+export const ExpandableContent = ({
+  text,
+  clampLines = 2,
+  onChange,
+}: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const expandedRef = useRef<HTMLDivElement>(null);
   const clampedRef = useRef<HTMLDivElement>(null);
   const [heights, setHeights] = useState({ clamped: "auto", expanded: "auto" });
   const html = formatMarkdown(text);
   const { t } = useTranslation();
+
+  const handleChange = () => {
+    if (onChange) {
+      onChange(!isExpanded);
+    }
+    setIsExpanded(!isExpanded);
+  };
 
   useEffect(() => {
     if (expandedRef.current && clampedRef.current) {
@@ -24,12 +36,6 @@ export const ExpandableContent = ({ text, clampLines = 2 }: Props) => {
       });
     }
   }, [clampLines, html]);
-
-  const sharedHiddenStyle = {
-    position: "absolute" as const,
-    visibility: "hidden" as const,
-    width: "100%",
-  };
 
   const clampedStyle = {
     display: "-webkit-box",
@@ -48,34 +54,26 @@ export const ExpandableContent = ({ text, clampLines = 2 }: Props) => {
   );
 
   return (
-    <div className={styles.expandable}>
-      <div className={styles.expandableWrapper}>
-        <div
-          ref={clampedRef}
-          className={styles.measurementElement}
-          style={sharedHiddenStyle}
-        >
-          <ContentBlock clamped />
-        </div>
-        <div
-          ref={expandedRef}
-          className={styles.measurementElement}
-          style={sharedHiddenStyle}
-        >
-          <ContentBlock />
-        </div>
+    <div className={styles.expendableWrapper}>
+      <div ref={clampedRef} className={styles.measurements}>
+        <ContentBlock clamped />
+      </div>
+      <div ref={expandedRef} className={styles.measurements}>
+        <ContentBlock />
+      </div>
 
-        <div
-          className={styles.expandableContent}
-          style={{
-            height: isExpanded ? heights.expanded : heights.clamped,
-          }}
-        >
-          <ContentBlock clamped={!isExpanded} />
-        </div>
+      {/* Actual content */}
+      <div
+        className={styles.expandableContent}
+        style={{
+          height: isExpanded ? heights.expanded : heights.clamped,
+        }}
+      >
+        <ContentBlock clamped={!isExpanded} />
       </div>
       <button
-        onClick={() => setIsExpanded(!isExpanded)}
+        style={{ marginTop: "1rem" }}
+        onClick={handleChange}
         className={styles.learnMoreButton}
       >
         {isExpanded ? t("common.button.less") : t("common.button.more")}

@@ -13,14 +13,18 @@
 }
 
 .imageContainer {
-  flex: 2;
-  max-width: 45%;
   position: sticky;
   top: calc((var(--header-height) + 2rem));
   align-self: flex-start;
   height: fit-content;
+  transition: all 1s ease;
 }
-
+.imageContainer.bigger {
+  flex: 2;
+}
+.imageContainer.smaller {
+  flex: 1;
+}
 .image {
   width: 100%;
   height: auto;
@@ -33,49 +37,6 @@
   display: flex;
   flex-direction: column;
   transition: all 1s ease;
-}
-
-.textContent {
-  position: relative;
-  overflow: hidden;
-}
-
-.mainText,
-.extendedText {
-  transition: all 1s ease;
-  overflow: hidden;
-}
-
-.mainText {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--fg-secondary);
-  margin-bottom: 1.5rem;
-}
-
-.extendedText {
-  margin-bottom: 1.5rem;
-}
-
-.extendedText p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--fg-secondary);
-  margin-bottom: 1rem;
-}
-
-.visible {
-  max-height: 2000px;
-  padding: 1rem 0;
-}
-
-.hidden {
-  max-height: 0;
-  padding: 0;
-}
-
-.learnMoreButton {
-  align-self: flex-start;
 }
 
 @media (max-width: 768px) {

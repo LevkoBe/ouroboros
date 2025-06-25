@@ -1,25 +1,26 @@
-.measurementElement {
-  pointer-events: none;
+.expandableWrapper {
+  position: relative;
+  transition: flex-grow 1s ease;
+  min-width: 0;
 }
-
 .expandableContent {
   transition: height 1s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
-
 .clampedContent {
   text-overflow: ellipsis;
 }
 
-.expandableWrapper {
-  position: relative;
-  margin-bottom: 15px;
+.measurements {
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+  max-width: 100%;
 }
 
 .visible {
   max-height: min-content;
 }
-
 .hidden {
   max-height: 0;
 }
