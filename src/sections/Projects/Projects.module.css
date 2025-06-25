@@ -8,6 +8,7 @@
 
 .projectCard {
   background-color: var(--bg-primary);
+  height: fit-content;
   padding: 1rem;
   border-radius: 1rem;
   cursor: pointer;
@@ -24,6 +25,7 @@
 
 .projectImage {
   width: 100%;
+  aspect-ratio: 1;
   min-height: fit-content;
   overflow: hidden;
   border-radius: 0.5rem;
@@ -36,6 +38,7 @@
 
 .cardContent {
   display: flex;
+  flex-direction: column;
 }
 
 .descriptionContainer {

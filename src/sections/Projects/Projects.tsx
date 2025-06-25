@@ -1,8 +1,9 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Projects.module.css";
 import { useProjects } from "@/hooks/useProjects";
 import { Button } from "@/components/Button/Button";
+import Popup from "@/components/Popup/Popup";
 
 const MIN_CARD_WIDTH = 250;
 const GAP = 16;
@@ -14,19 +15,12 @@ const Projects: React.FC = () => {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(
     null
   );
-  const [expandedStyle, setExpandedStyle] =
-    useState<React.CSSProperties | null>(null);
   const [imagesLoaded, setImagesLoaded] = useState<Record<string, boolean>>({});
   const [, setAllImagesLoaded] = useState(false);
-
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   const handleImageLoad = (projectId: string) => {
-    setImagesLoaded((prev) => ({
-      ...prev,
-      [projectId]: true,
-    }));
+    setImagesLoaded((prev) => ({ ...prev, [projectId]: true }));
   };
 
   useEffect(() => {
@@ -34,10 +28,8 @@ const Projects: React.FC = () => {
       projects.length > 0 &&
       Object.keys(imagesLoaded).length === projects.length
     ) {
-      const allLoaded = Object.values(imagesLoaded).every((loaded) => loaded);
-      if (allLoaded) {
-        setAllImagesLoaded(true);
-      }
+      const allLoaded = Object.values(imagesLoaded).every(Boolean);
+      if (allLoaded) setAllImagesLoaded(true);
     }
   }, [imagesLoaded, projects]);
 
@@ -47,29 +39,6 @@ const Projects: React.FC = () => {
     return Math.max(1, Math.floor(containerWidth / (MIN_CARD_WIDTH + GAP)));
   };
 
-  const toggleProject = (projectId: string, event: React.MouseEvent) => {
-    event.stopPropagation();
-    const card = cardRefs.current[projectId];
-
-    if (selectedProjectId === projectId) {
-      setSelectedProjectId(null);
-      setExpandedStyle(null);
-    } else if (card) {
-      const rect = card.getBoundingClientRect();
-
-      const initial = {
-        position: "fixed" as const,
-        top: rect.top,
-        left: rect.left,
-        width: rect.width,
-        zIndex: 999,
-        transition: "all 0.5s ease",
-      };
-
-      setExpandedStyle(initial);
-      setSelectedProjectId(projectId);
-    }
-  };
   useEffect(() => {
     if (!containerRef.current) return;
 
@@ -81,104 +50,71 @@ const Projects: React.FC = () => {
       );
     };
 
-    const handleResize = () => {
-      updateGridColumns();
-
-      if (selectedProjectId && expandedStyle) {
-        const card = cardRefs.current[selectedProjectId];
-        if (card) {
-          const targetWidth =
-            window.innerWidth < 768
-              ? window.innerWidth * 0.9
-              : window.innerWidth < 1200
-              ? window.innerWidth * 0.7
-              : Math.min(window.innerWidth * 0.6, 1200);
-
-          const targetHeight = window.innerHeight * 0.7;
-          const top = Math.max(20, (window.innerHeight - targetHeight) / 2);
-          const left = (window.innerWidth - targetWidth) / 2;
-
-          setExpandedStyle((prev) => ({
-            ...prev!,
-            top: `${top}px`,
-            left: `${left}px`,
-            width: `${targetWidth}px`,
-            maxHeight: `${targetHeight}px`,
-          }));
-        }
-      }
-    };
-
-    const observer = new ResizeObserver(handleResize);
+    const observer = new ResizeObserver(updateGridColumns);
     observer.observe(containerRef.current);
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", updateGridColumns);
     updateGridColumns();
 
     return () => {
       observer.disconnect();
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", updateGridColumns);
     };
-  }, [projects.length, selectedProjectId, expandedStyle]);
+  }, [projects.length]);
+
+  const selectedProject = projects.find((p) => p.id === selectedProjectId);
 
   return (
     <section>
       <h1>{t("projects.title")}</h1>
 
       <div ref={containerRef} className={styles.projectsGrid}>
-        {projects.map((project) => {
-          const isExpanded = selectedProjectId === project.id;
-
-          return (
-            <div
-              key={project.id}
-              ref={(el) => {
-                cardRefs.current[project.id] = el;
-              }}
-              className={`${styles.projectCard} ${
-                isExpanded ? styles.expanded : ""
-              }`}
-              style={isExpanded && expandedStyle ? expandedStyle : undefined}
-              onClick={(e) => toggleProject(project.id, e)}
-            >
-              <div
-                className={styles.cardContent}
-                style={{
-                  display: "flex",
-                  flexDirection: isExpanded ? "row" : "column",
-                }}
-              >
-                <img
-                  src={project.imageSrc}
-                  alt={project.title}
-                  onLoad={() => handleImageLoad(project.id)}
-                  className={styles.projectImage}
-                />
-                {isExpanded ? (
-                  <div className={styles.descriptionContainer}>
-                    <h2>{project.title}</h2>
-                    {project.description.split("\n").map((line, index) => (
-                      <div key={index} style={{ marginBottom: "0.5rem" }}>
-                        {line}
-                      </div>
-                    ))}
-                    <Button>✕</Button>
-                  </div>
-                ) : (
-                  <div className={styles.descriptionContainer}>
-                    <h3>{project.title}</h3>
-                    <p className={styles.projectDescription}>
-                      {project.description}
-                    </p>
-                    <Button>{t("common.button.more")}</Button>
-                  </div>
-                )}
+        {projects.map((project) => (
+          <div
+            key={project.id}
+            className={styles.projectCard}
+            onClick={() => setSelectedProjectId(project.id)}
+          >
+            <div className={styles.cardContent}>
+              <img
+                src={project.imageSrc}
+                alt={project.title}
+                onLoad={() => handleImageLoad(project.id)}
+                className={styles.projectImage}
+              />
+              <div className={styles.descriptionContainer}>
+                <h3>{project.title}</h3>
+                <p className={styles.projectDescription}>
+                  {project.description}
+                </p>
+                <Button>{t("common.button.more")}</Button>
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
 
-      {selectedProjectId && <div className={styles.overlay} />}
+      {selectedProject && (
+        <Popup
+          onClose={() => setSelectedProjectId(null)}
+          title={selectedProject.title}
+          noScroll
+        >
+          <div className={styles.cardContent} style={{ flexDirection: "row" }}>
+            <img
+              src={selectedProject.imageSrc}
+              alt={selectedProject.title}
+              className={styles.projectImage}
+            />
+            <div className={styles.descriptionContainer}>
+              {selectedProject.description.split("\n").map((line, index) => (
+                <div key={index} style={{ marginBottom: "0.5rem" }}>
+                  {line}
+                </div>
+              ))}
+            </div>
+          </div>
+        </Popup>
+      )}
     </section>
   );
 };
