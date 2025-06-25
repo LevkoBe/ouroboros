@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, MouseEvent, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, MouseEvent } from "react";
 import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
 import styles from "./Gallery.module.css";
 import { images } from "@/data/images";
@@ -6,131 +6,111 @@ import Popup from "@/components/Popup/Popup";
 import { Button } from "@/components/Button/Button";
 
 export default function Gallery() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollStartLeft, setScrollStartLeft] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const [modalImage, setModalImage] = useState<string | null>(null);
-  const [isScrolling, setIsScrolling] = useState(false);
-  const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const extendedImages = [...images, ...images, ...images];
+  const [isDragging, setDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, scroll: 0 });
+  const extended = [...images, ...images, ...images];
+  const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleScroll = useCallback(() => {
-    const container = scrollContainerRef.current;
-    if (!container || isScrolling) return;
-
-    if (scrollTimeoutRef.current) {
-      clearTimeout(scrollTimeoutRef.current);
-    }
-
-    scrollTimeoutRef.current = setTimeout(() => {
-      const { scrollLeft, scrollWidth, clientWidth } = container;
-      const third = scrollWidth / 3;
-
-      if (scrollLeft >= third * 2 - 50) {
-        container.scrollLeft = scrollLeft - third;
-      } else if (scrollLeft <= third - clientWidth + 50) {
-        container.scrollLeft = scrollLeft + third;
-      }
+    const el = scrollRef.current;
+    if (!el) return;
+    if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+    scrollTimeout.current = setTimeout(() => {
+      const third = el.scrollWidth / 3;
+      const { scrollLeft, clientWidth } = el;
+      if (scrollLeft >= third * 2 - 50) el.scrollLeft -= third;
+      else if (scrollLeft <= third - clientWidth + 50) el.scrollLeft += third;
     }, 150);
-  }, [isScrolling]);
-
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      container.scrollLeft = Math.floor(container.scrollWidth / 3);
-    }
   }, []);
 
   useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
+    const el = scrollRef.current;
+    if (el) el.scrollLeft = Math.floor(el.scrollWidth / 3);
+  }, []);
 
-    container.addEventListener("scroll", handleScroll, { passive: true });
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      container.removeEventListener("scroll", handleScroll);
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
+      el.removeEventListener("scroll", handleScroll);
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
       }
     };
   }, [handleScroll]);
 
-  const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
-    if (!scrollContainerRef.current) return;
-    if ((e.target as HTMLElement).tagName === "IMG") return;
-    setIsDragging(true);
-    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
-    setScrollStartLeft(scrollContainerRef.current.scrollLeft);
+  const onMouseDown = (e: MouseEvent<HTMLDivElement>) => {
+    if (!scrollRef.current || (e.target as HTMLElement).tagName === "IMG")
+      return;
+    setDragging(true);
+    setDragStart({
+      x: e.pageX - scrollRef.current.offsetLeft,
+      scroll: scrollRef.current.scrollLeft,
+    });
   };
 
-  const handleMouseUpOrLeave = () => setIsDragging(false);
-
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (!isDragging || !scrollContainerRef.current) return;
+  const onMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    if (!isDragging || !scrollRef.current) return;
     e.preventDefault();
-    const x = e.pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    scrollContainerRef.current.scrollLeft = scrollStartLeft - walk;
+    const delta = (e.pageX - scrollRef.current.offsetLeft - dragStart.x) * 2;
+    scrollRef.current.scrollLeft = dragStart.scroll - delta;
   };
 
-  const scrollByDirection = useCallback((direction: "left" | "right") => {
-    if (!scrollContainerRef.current) return;
-
-    setIsScrolling(true);
-
-    const scrollAmount = scrollContainerRef.current.clientWidth * 0.8;
-
-    scrollContainerRef.current.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
+  const scrollBy = useCallback((dir: "left" | "right") => {
+    scrollRef.current?.scrollBy({
+      left: (dir === "left" ? -1 : 1) * (scrollRef.current.clientWidth * 0.8),
       behavior: "smooth",
     });
-
-    setTimeout(() => {
-      setIsScrolling(false);
-    }, 600);
   }, []);
-
-  const openModal = (src: string) => setModalImage(src);
-  const closeModal = () => setModalImage(null);
 
   return (
     <div className={styles.galleryContainer}>
-      <Button onClick={() => scrollByDirection("left")}>
+      <Button
+        variant="outlined"
+        style={arrowStyle("left")}
+        onClick={() => scrollBy("left")}
+      >
         <LuArrowLeft size={40} />
       </Button>
 
       <div
-        ref={scrollContainerRef}
+        ref={scrollRef}
         className={`${styles.scrollContainer} ${
           isDragging ? styles.grabbing : ""
         }`}
-        onMouseDown={handleMouseDown}
-        onMouseLeave={handleMouseUpOrLeave}
-        onMouseUp={handleMouseUpOrLeave}
-        onMouseMove={handleMouseMove}
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={() => setDragging(false)}
+        onMouseLeave={() => setDragging(false)}
       >
-        {extendedImages.map((image, index) => (
-          <div key={`${image.src}-${index}`} className={styles.imageContainer}>
+        {extended.map((img, i) => (
+          <div key={`${img.src}-${i}`} className={styles.imageContainer}>
             <img
-              src={image.src}
-              alt={`Gallery image ${index + 1}`}
+              src={img.src}
+              alt={`Gallery image ${i + 1}`}
               className={styles.image}
-              draggable="false"
-              onClick={() => openModal(image.src)}
-              style={{ pointerEvents: "auto" }}
+              draggable={false}
+              onClick={() => setModalImage(img.src)}
               loading="lazy"
+              style={{ pointerEvents: "auto" }}
             />
           </div>
         ))}
       </div>
 
-      <Button onClick={() => scrollByDirection("right")}>
+      <Button
+        variant="outlined"
+        style={arrowStyle("right")}
+        onClick={() => scrollBy("right")}
+      >
         <LuArrowRight size={40} />
       </Button>
 
       {modalImage && (
-        <Popup onClose={closeModal} fullScreenContent noScroll>
+        <Popup onClose={() => setModalImage(null)} fullScreenContent noScroll>
           <img
             src={modalImage}
             alt="Full screen"
@@ -145,3 +125,16 @@ export default function Gallery() {
     </div>
   );
 }
+
+const arrowStyle = (side: "left" | "right"): React.CSSProperties => ({
+  position: "absolute",
+  top: "50%",
+  [side]: "20px",
+  zIndex: 1,
+  width: "2rem",
+  height: "2rem",
+  padding: "0.3rem",
+  borderRadius: "50%",
+  border: "none",
+  opacity: 0.7,
+});
