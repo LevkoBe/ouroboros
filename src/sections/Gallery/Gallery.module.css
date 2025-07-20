@@ -27,20 +27,21 @@
 }
 
 .imageContainer {
-  flex: 0 0 80%;
-  max-width: 80%;
+  flex: 0 0 auto;
   height: 100%;
-  padding: 0 10px;
+  padding: 0 5px;
   overflow: hidden;
   scroll-snap-align: center;
   /* Optimize rendering */
   contain: layout style paint;
+  display: flex;
+  align-items: center;
 }
 
 .image {
-  width: 100%;
+  max-width: none;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 8px;
   pointer-events: none;
   will-change: transform;

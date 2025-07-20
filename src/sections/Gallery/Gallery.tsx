@@ -10,30 +10,77 @@ export default function Gallery() {
   const [modalImage, setModalImage] = useState<string | null>(null);
   const [isDragging, setDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, scroll: 0 });
+  const [isInitialized, setIsInitialized] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(0);
   const extended = [...images, ...images, ...images];
   const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleScroll = useCallback(() => {
     const el = scrollRef.current;
-    if (!el) return;
+    if (!el || !isInitialized) return;
+
     if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+
     scrollTimeout.current = setTimeout(() => {
       const third = el.scrollWidth / 3;
       const { scrollLeft, clientWidth } = el;
-      if (scrollLeft >= third * 2 - 50) el.scrollLeft -= third;
-      else if (scrollLeft <= third - clientWidth + 50) el.scrollLeft += third;
-    }, 150);
+
+      if (scrollLeft >= third * 2 - clientWidth / 2) {
+        el.scrollTo({ left: scrollLeft - third, behavior: "auto" });
+      } else if (scrollLeft <= third - clientWidth / 2) {
+        el.scrollTo({ left: scrollLeft + third, behavior: "auto" });
+      }
+    }, 100);
+  }, [isInitialized]);
+
+  const totalImages = extended.length;
+
+  const disableSmoothScroll = () => {
+    if (scrollRef.current) {
+      scrollRef.current.style.scrollBehavior = "auto";
+    }
+  };
+  const enableSmoothScroll = () => {
+    if (scrollRef.current) {
+      scrollRef.current.style.scrollBehavior = "smooth";
+    }
+  };
+
+  const initializeScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    disableSmoothScroll();
+
+    requestAnimationFrame(() => {
+      const third = el.scrollWidth / 3;
+      if (third > 0) {
+        el.scrollLeft = third;
+
+        requestAnimationFrame(() => {
+          enableSmoothScroll();
+          setIsInitialized(true);
+        });
+      }
+    });
   }, []);
 
+  const handleImageLoad = () => {
+    setImagesLoaded((prev) => prev + 1);
+  };
+
   useEffect(() => {
-    const el = scrollRef.current;
-    if (el) el.scrollLeft = Math.floor(el.scrollWidth / 3);
-  }, []);
+    if (imagesLoaded === totalImages) {
+      initializeScroll();
+    }
+  }, [imagesLoaded, totalImages, initializeScroll]);
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
+
     el.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => {
       el.removeEventListener("scroll", handleScroll);
       if (scrollTimeout.current) {
@@ -94,6 +141,7 @@ export default function Gallery() {
               className={styles.image}
               draggable={false}
               onClick={() => setModalImage(img.src)}
+              onLoad={handleImageLoad}
               loading="lazy"
               style={{ pointerEvents: "auto" }}
             />

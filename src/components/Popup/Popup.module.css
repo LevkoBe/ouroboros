@@ -44,7 +44,7 @@
 .scrollableContent {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   overflow-y: auto;
   height: 100%;
