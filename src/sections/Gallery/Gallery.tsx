@@ -210,11 +210,7 @@ export default function Gallery() {
           <img
             src={modalImage}
             alt="Full screen"
-            style={{
-              height: "100%",
-              objectFit: "contain",
-              borderRadius: "10px",
-            }}
+            className={styles.popupImage}
           />
         </Popup>
       )}
