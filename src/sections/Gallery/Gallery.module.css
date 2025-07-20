@@ -1,11 +1,23 @@
 .galleryContainer {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: min(500px, 70vh);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .galleryContainer {
+    height: min(300px, 50vh);
+  }
+}
+
+@media (max-width: 480px) {
+  .galleryContainer {
+    height: min(250px, 45vh);
+  }
 }
 
 .scrollContainer {
@@ -47,6 +59,15 @@
   will-change: transform;
   backface-visibility: hidden;
   transform: translateZ(0);
+}
+
+@media (max-width: 768px) {
+  .image {
+    max-width: calc(100vw - 40px);
+    width: auto;
+    height: auto;
+    max-height: 100%;
+  }
 }
 
 .grabbing {
