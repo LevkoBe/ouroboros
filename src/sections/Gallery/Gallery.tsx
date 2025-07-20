@@ -12,6 +12,7 @@ export default function Gallery() {
   const [dragStart, setDragStart] = useState({ x: 0, scroll: 0 });
   const [isInitialized, setIsInitialized] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(0);
+
   const extended = [...images, ...images, ...images];
   const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -40,6 +41,7 @@ export default function Gallery() {
       scrollRef.current.style.scrollBehavior = "auto";
     }
   };
+
   const enableSmoothScroll = () => {
     if (scrollRef.current) {
       scrollRef.current.style.scrollBehavior = "smooth";
@@ -56,7 +58,6 @@ export default function Gallery() {
       const third = el.scrollWidth / 3;
       if (third > 0) {
         el.scrollLeft = third;
-
         requestAnimationFrame(() => {
           enableSmoothScroll();
           setIsInitialized(true);
@@ -92,6 +93,7 @@ export default function Gallery() {
   const onMouseDown = (e: MouseEvent<HTMLDivElement>) => {
     if (!scrollRef.current || (e.target as HTMLElement).tagName === "IMG")
       return;
+
     setDragging(true);
     setDragStart({
       x: e.pageX - scrollRef.current.offsetLeft,
@@ -102,13 +104,59 @@ export default function Gallery() {
   const onMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     if (!isDragging || !scrollRef.current) return;
     e.preventDefault();
+
     const delta = (e.pageX - scrollRef.current.offsetLeft - dragStart.x) * 2;
     scrollRef.current.scrollLeft = dragStart.scroll - delta;
   };
 
   const scrollBy = useCallback((dir: "left" | "right") => {
-    scrollRef.current?.scrollBy({
-      left: (dir === "left" ? -1 : 1) * (scrollRef.current.clientWidth * 0.8),
+    if (!scrollRef.current) return;
+
+    const container = scrollRef.current;
+    const imageContainers = container.querySelectorAll(
+      `.${styles.imageContainer}`
+    );
+    if (imageContainers.length === 0) return;
+
+    const currentScroll = container.scrollLeft;
+    const containerCenter = currentScroll + container.clientWidth / 2;
+
+    let targetImageIndex = -1;
+    for (let i = 0; i < imageContainers.length; i++) {
+      const img = imageContainers[i] as HTMLElement;
+      const imgLeft = img.offsetLeft;
+      const imgRight = imgLeft + img.offsetWidth;
+
+      if (containerCenter >= imgLeft && containerCenter <= imgRight) {
+        targetImageIndex = i;
+        break;
+      }
+    }
+
+    if (targetImageIndex === -1) {
+      let minDistance = Infinity;
+      for (let i = 0; i < imageContainers.length; i++) {
+        const img = imageContainers[i] as HTMLElement;
+        const imgCenter = img.offsetLeft + img.offsetWidth / 2;
+        const distance = Math.abs(containerCenter - imgCenter);
+        if (distance < minDistance) {
+          minDistance = distance;
+          targetImageIndex = i;
+        }
+      }
+    }
+
+    const nextIndex =
+      dir === "right"
+        ? Math.min(targetImageIndex + 1, imageContainers.length - 1)
+        : Math.max(targetImageIndex - 1, 0);
+
+    const nextImage = imageContainers[nextIndex] as HTMLElement;
+    const nextImageCenter = nextImage.offsetLeft + nextImage.offsetWidth / 2;
+    const scrollToPosition = nextImageCenter - container.clientWidth / 2;
+
+    container.scrollTo({
+      left: scrollToPosition,
       behavior: "smooth",
     });
   }, []);
