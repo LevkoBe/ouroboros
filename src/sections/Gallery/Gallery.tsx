@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback, MouseEvent } from "react";
 import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
 import styles from "./Gallery.module.css";
-import { images } from "@/data/images";
+import { imageSrcs as images } from "@/data/images";
 import Popup from "@/components/Popup/Popup";
 import { Button } from "@/components/Button/Button";
 
@@ -182,13 +182,13 @@ export default function Gallery() {
         onMouseLeave={() => setDragging(false)}
       >
         {extended.map((img, i) => (
-          <div key={`${img.src}-${i}`} className={styles.imageContainer}>
+          <div key={`${img}-${i}`} className={styles.imageContainer}>
             <img
-              src={img.src}
+              src={img}
               alt={`Gallery image ${i + 1}`}
               className={styles.image}
               draggable={false}
-              onClick={() => setModalImage(img.src)}
+              onClick={() => setModalImage(img)}
               onLoad={handleImageLoad}
               loading="lazy"
               style={{ pointerEvents: "auto" }}

@@ -1,16 +1,52 @@
-export interface ImageData {
-  src: string;
-}
-
-function generateImages(
-  count: number,
-  prefix: string,
-  ext = ".jpg",
-  folder = "/images/gallery"
-) {
-  return Array.from({ length: count }, (_, i) => ({
-    src: `${folder}/${prefix}${String(i + 1).padStart(4, "0")}${ext}`,
-  }));
-}
-
-export const images: ImageData[] = generateImages(114, "photo_");
+export const imageSrcs = [
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103053/photo_0001_li3wyq.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103139/photo_0012_x1jjxr.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103139/photo_0043_p2idfq.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103139/photo_0023_pueqqf.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103061/photo_0007_qx1d2i.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103061/photo_0005_nrvyyu.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103060/photo_0006_kpowzu.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103060/photo_0004_ynvclc.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103059/photo_0009_ouu6vt.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103059/photo_0010_i2k0go.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103053/photo_0003_nc8pqq.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103141/photo_0099_wd4hes.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103140/photo_0072_gsas7k.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103140/photo_0056_uuv6rx.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103140/photo_0079_lwsm7e.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103139/photo_0012_x1jjxr.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103195/photo_0019_jq42wl.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103160/photo_0017_f2dime.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103160/photo_0109_mh7usm.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103152/photo_0101_oce8wu.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103142/photo_0092_ero9n5.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103295/photo_0038_qmcpll.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103294/photo_0026_o2s4uv.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103294/photo_0036_xyypol.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103292/photo_0025_g3oxi4.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103292/photo_0024_fhjo0n.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103302/photo_0058_yqrvxc.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103301/photo_0061_pwlpmj.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103300/photo_0049_xm5epw.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103297/photo_0037_dzrzi6.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103295/photo_0034_hoyigp.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103309/photo_0103_jvpskg.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103305/photo_0098_nskt8i.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103304/photo_0077_glz3l0.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103303/photo_0073_bwvop8.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103303/photo_0055_ygjqjz.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103315/photo_0085_xhifet.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103313/photo_0096_dxf1fp.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103311/photo_0086_smxwlz.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103311/photo_0110_op6uu8.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103310/photo_0081_vtpw6r.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103320/photo_0027_rb7ccn.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103320/photo_0070_k2ybd2.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103321/photo_0087_ognuxl.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103321/photo_0089_kr6y5z.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103323/photo_0068_asrgwg.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103323/photo_0054_kwvl0t.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103324/photo_0078_vljs7l.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103327/photo_0044_s8fm6z.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1755103327/photo_0105_uzf56v.jpg",
+];
