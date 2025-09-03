@@ -4,7 +4,7 @@ import styles from "./Projects.module.css";
 import { useProjects } from "@/hooks/useProjects";
 import { Button } from "@/components/Button/Button";
 import Popup from "@/components/Popup/Popup";
-import Gallery from "@/components/ImagePile/ImagePile";
+import ImagePile from "@/components/ImagePile/ImagePile";
 import { artworkImgSrcs } from "@/data/images";
 
 const MIN_CARD_WIDTH = 250;
@@ -106,16 +106,9 @@ const Projects: React.FC = () => {
             style={{ flexDirection: "column" }}
           >
             {selectedProjectId === projects[2].id ? (
-              <Gallery
-                images={artworkImgSrcs}
-                className={styles.projectImage}
-              />
+              <ImagePile images={artworkImgSrcs} />
             ) : (
-              <img
-                src={selectedProject.imageSrc}
-                alt={selectedProject.title}
-                className={styles.projectImage}
-              />
+              <img src={selectedProject.imageSrc} alt={selectedProject.title} />
             )}
             <div className={styles.descriptionContainer}>
               {selectedProject.description.split("\n").map((line, index) => (

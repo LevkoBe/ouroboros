@@ -8,18 +8,14 @@ interface ImagePileProps {
   className?: string;
 }
 
-const ImagePile: React.FC<ImagePileProps> = ({ images, className = "" }) => {
+const ImagePile: React.FC<ImagePileProps> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [direction, setDirection] = useState<"next" | "prev" | "none">("none");
   const [isHovered, setIsHovered] = useState(false);
 
   if (!images || images.length === 0) {
-    return (
-      <div className={`${styles.gallery} ${className}`}>
-        No images available
-      </div>
-    );
+    return <div className={styles.gallery}>No images available</div>;
   }
 
   const animationDuration = 500;
@@ -119,7 +115,7 @@ const ImagePile: React.FC<ImagePileProps> = ({ images, className = "" }) => {
 
   return (
     <div
-      className={`${styles.gallery} ${className}`}
+      className={styles.gallery}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
