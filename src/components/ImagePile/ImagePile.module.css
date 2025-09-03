@@ -1,0 +1,47 @@
+.gallery {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imageStack {
+  position: relative;
+  width: 85%;
+  aspect-ratio: 1;
+  border-radius: 0.5rem;
+}
+
+.stackedImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid var(--border-strong);
+  will-change: transform, opacity;
+}
+
+.gallery:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    margin-bottom: 1rem;
+  }
+}
+
+button[disabled] {
+  opacity: 0.3 !important;
+  cursor: not-allowed !important;
+}
