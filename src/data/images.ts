@@ -50,3 +50,27 @@ export const imageSrcs = [
   "https://res.cloudinary.com/dryosisya/image/upload/v1755103327/photo_0044_s8fm6z.jpg",
   "https://res.cloudinary.com/dryosisya/image/upload/v1755103327/photo_0105_uzf56v.jpg",
 ];
+
+export const artworkImgSrcs = [
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916801/art_web_0079_tkli4r.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756917525/art_web_0077_bl7sox.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756917198/art_web_0039_fzbdvm.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916761/art_web_0017_xr2a4k.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916762/art_web_0044_yvk3ov.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916763/art_web_0073_x6us3n.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916754/art_web_0034_cwewfc.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916755/art_web_0076_pmxumy.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916746/art_web_0082_pppg6q.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916757/art_web_0049_kieqqt.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916748/art_web_0084_jkfbtp.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916750/art_web_0042_yzbizp.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916751/art_web_0001_dkeafk.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916754/art_web_0007_l7k10v.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916745/art_web_0054_btfqra.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916746/art_web_0036_tllydc.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916745/art_web_0055_bhzphr.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916747/art_web_0083_q4crmx.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916743/art_web_0048_iljctm.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916743/art_web_0004_vqoo1v.jpg",
+  "https://res.cloudinary.com/dryosisya/image/upload/v1756916744/art_web_0047_avjr30.jpg",
+];
