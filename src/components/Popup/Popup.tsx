@@ -52,6 +52,7 @@ const Popup: React.FC<PopupProps> = ({
             height: "2rem",
             border: "none",
             fontSize: "2rem",
+            zIndex: "10",
           }}
           onClick={onClose}
         >

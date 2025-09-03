@@ -101,7 +101,10 @@ const Projects: React.FC = () => {
           title={selectedProject.title}
           noScroll
         >
-          <div className={styles.cardContent} style={{ flexDirection: "row" }}>
+          <div
+            className={styles.cardContent}
+            style={{ flexDirection: "column" }}
+          >
             {selectedProjectId === projects[2].id ? (
               <Gallery
                 images={artworkImgSrcs}
