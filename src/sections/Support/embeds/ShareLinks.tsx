@@ -10,7 +10,7 @@ const ShareLinks: React.FC = () => {
 
   const shareUrls = {
     email:
-      "mailto:info@ouroboros-ua.com?subject=Check%20out%20Ouroboros&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://ouroboros-ua.com",
+      "mailto:ouroboros.2025.ua@gmail.com?subject=Check%20out%20Ouroboros&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://ouroboros-ua.com",
     instagram: "https://www.instagram.com/ouroboros_ua/",
   };
 

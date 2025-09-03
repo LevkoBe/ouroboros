@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
 
         <div className={styles.socialLinks}>
           <a
-            href="mailto:info@ouroboros-ua.com"
+            href="mailto:ouroboros.2025.ua@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialIcon}

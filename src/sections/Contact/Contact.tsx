@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
 
-  const emailAddress = "info@ouroboros-ua.com";
+  const emailAddress = "ouroboros.2025.ua@gmail.com";
 
   const copyToClipboard = (text: string, message: string) => {
     navigator.clipboard
