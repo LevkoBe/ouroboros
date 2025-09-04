@@ -56,7 +56,7 @@ const Popup: React.FC<PopupProps> = ({
           }}
           onClick={onClose}
         >
-          ×
+          &times;
         </Button>
         <div
           className={`${styles.scrollableContent} ${
