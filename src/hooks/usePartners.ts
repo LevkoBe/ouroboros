@@ -13,25 +13,20 @@ export interface PartnerData {
 export const usePartners = (): PartnerData[] => {
   const { t } = useTranslation();
 
-  return useMemo(
-    () => [
-      {
-        id: "partner1",
-        name: t("partners.partner1.name"),
-        description: t("partners.partner1.description"),
-        imageSrc: t("partners.partner1.imageSrc"),
-        title: t("partners.partner1.title"),
-        website: t("partners.partner1.website"),
-      },
-      {
-        id: "partner2",
-        name: t("partners.partner2.name"),
-        description: t("partners.partner2.description"),
-        imageSrc: t("partners.partner2.imageSrc"),
-        title: t("partners.partner2.title"),
-        website: t("partners.partner2.website"),
-      },
-    ],
-    [t]
-  );
+  return useMemo(() => {
+    const partnerKeys: string[] = t("partners", { returnObjects: true })
+      ? Object.keys(t("partners", { returnObjects: true })).filter((key) =>
+          key.startsWith("partner")
+        )
+      : [];
+
+    return partnerKeys.map((key) => ({
+      id: key,
+      name: t(`partners.${key}.name`),
+      description: t(`partners.${key}.description`),
+      imageSrc: t(`partners.${key}.imageSrc`),
+      title: t(`partners.${key}.title`),
+      website: t(`partners.${key}.website`),
+    }));
+  }, [t]);
 };

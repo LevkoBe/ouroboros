@@ -177,6 +177,13 @@
       "title": "NGO Providing Humanitarian Support for Ukraine",
       "imageSrc": "./images/Aspen Aid.jpg",
       "website": "https://www.aspenaid.org/"
+    },
+    "partner3": {
+      "description": "Greater Good Charities is a global nonprofit that works to help people, pets, and the planet by mobilizing resources and responding to humanitarian crises. Since the start of the full-scale invasion, it has been supporting Ukraine with critical aid, including food, medical supplies, and other essential resources.",
+      "name": "Greater Good Charities",
+      "title": "Global Nonprofit Supporting People, Pets & the Planet",
+      "imageSrc": "./images/Greater Good Charities.jpg",
+      "website": "https://greatergood.org/"
     }
   },
   "contact": {
