@@ -165,11 +165,11 @@
   "partners": {
     "title": "Our Partners",
     "partner1": {
-      "description": "Medicines for Ukraine supports both civilian and military hospitals by providing essential medications and medical supplies. Collaborating directly with the Ministry of Health of Ukraine and other trusted partners, the organization also delivers humanitarian aid to civilians. It has been actively operating since the onset of the full-scale invasion.",
-      "name": "Medicines for Ukraine",
-      "title": "Medical Aid & Humanitarian Relief Organization",
-      "imageSrc": "./images/Medicines for Ukraine.jpg",
-      "website": "https://medicinestoukraine.com/"
+      "description": "Greater Good Charities is a global nonprofit that works to help people, pets, and the planet by mobilizing resources and responding to humanitarian crises. Since the start of the full-scale invasion, it has been supporting Ukraine with critical aid, including food, medical supplies, and other essential resources.",
+      "name": "Greater Good Charities",
+      "title": "Global Nonprofit Supporting People, Pets & the Planet",
+      "imageSrc": "./images/Greater Good Charities.jpg",
+      "website": "https://greatergood.org/"
     },
     "partner2": {
       "description": "AspenAid is a proven agile NGO providing material resources and humanitarian support to Ukraine in its resistance and response to the unprovoked russian invasion.",
@@ -179,11 +179,11 @@
       "website": "https://www.aspenaid.org/"
     },
     "partner3": {
-      "description": "Greater Good Charities is a global nonprofit that works to help people, pets, and the planet by mobilizing resources and responding to humanitarian crises. Since the start of the full-scale invasion, it has been supporting Ukraine with critical aid, including food, medical supplies, and other essential resources.",
-      "name": "Greater Good Charities",
-      "title": "Global Nonprofit Supporting People, Pets & the Planet",
-      "imageSrc": "./images/Greater Good Charities.jpg",
-      "website": "https://greatergood.org/"
+      "description": "Medicines for Ukraine supports both civilian and military hospitals by providing essential medications and medical supplies. Collaborating directly with the Ministry of Health of Ukraine and other trusted partners, the organization also delivers humanitarian aid to civilians. It has been actively operating since the onset of the full-scale invasion.",
+      "name": "Medicines for Ukraine",
+      "title": "Medical Aid & Humanitarian Relief Organization",
+      "imageSrc": "./images/Medicines for Ukraine.jpg",
+      "website": "https://medicinestoukraine.com/"
     }
   },
   "contact": {

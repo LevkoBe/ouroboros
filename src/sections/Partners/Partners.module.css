@@ -29,7 +29,7 @@
 
 .partnerCard {
   width: 100%;
-  height: auto;
+  height: fit-content;
   padding: 25px;
   background-color: var(--bg-secondary);
   border-radius: 12px;
@@ -79,7 +79,7 @@
 
 .partnerLink {
   color: var(--text-primary);
-  text-decoration: none;
+  text-decoration: solid underline var(--border-soft) 2px;
   transition: color 0.3s ease;
 }
 
